@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Himanshu ERP Solutions | Enterprise Manufacturing & Operations Suite</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+    --bg: #fffbf5;
+    --surface: #ffffff;
+    --surface2: #fff3e6;
+    --text: #1e1b18;
+    --muted: #6b7280;
+    --border: #fed7aa;
+    --primary: #ea580c; /* Vibrant Orange */
+    --primary-h: #c2410c;
+    --accent: #f59e0b; /* Warm Yellow */
+    --pink-red: #e11d48; /* Reddish Pink */
+    --ok: #059669;
+    --bad: #e11d48;
+    --shadow: 0 10px 30px rgba(234, 88, 12, 0.12);
+    --r: 20px;
+}
+
+[data-theme="dark"]{
+    --bg: #18120e;
+    --surface: #241b14;
+    --surface2: #33241b;
+    --text: #fef3c7;
+    --muted: #d1d5db;
+    --border: #573822;
+    --shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 Inter,system-ui,Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:auto;padding:0 20px}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
+
+/* Buttons */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:12px 28px;font:700 15px Inter,sans-serif;cursor:pointer;background:linear-gradient(135deg, #ea580c, #f59e0b);color:#fff;transition:all .3s ease;box-shadow:0 6px 20px rgba(234,88,12,0.3)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(234,88,12,0.45);background:linear-gradient(135deg, #c2410c, #d97706)}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.6);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.15);box-shadow:none}
+.btn.outline{background:transparent;color:var(--primary);border-color:var(--primary)}
+.btn.outline:hover{background:var(--primary);color:#fff}
+.btn.ok{background:var(--ok)}.btn.sm{padding:8px 18px;font-size:13px}
+.btn i{font-style:normal;transition:transform .25s}.btn:hover i{transform:translateX(3px) rotate(-8deg)}
+
+/* Announcement Bar */
+.bar{background:linear-gradient(90deg,#ea580c,#e11d48,#f59e0b);color:#fff;text-align:center;font-size:13px;padding:9px 16px;font-weight:600}
+.bar b{color:#fef08a}.bar a{text-decoration:underline;font-weight:700}
+
+/* Navigation */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px}
+.logo span.m{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#ea580c,#e11d48);box-shadow:0 6px 16px rgba(234,88,12,0.4);font-size:22px}
+.logo em{font-style:normal;color:var(--primary)}
+.links{display:flex;align-items:center;gap:6px}
+.links a.l{padding:8px 16px;border-radius:12px;font-weight:600;color:var(--muted);transition:background .25s,color .25s}
+.links a.l:hover,.links a.l.active{background:var(--surface2);color:var(--primary)}
+.icon-btn{width:42px;height:42px;border-radius:14px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;transition:background .25s,transform .2s}
+.icon-btn:hover{background:var(--surface2)}.icon-btn:active{transform:scale(.92)}
+.burger{display:none}
+@media(max-width:860px){.burger{display:block}.links{position:absolute;left:0;right:0;top:72px;flex-direction:column;align-items:stretch;background:var(--surface);padding:16px 20px 24px;border-bottom:1px solid var(--border);box-shadow:var(--shadow);opacity:0;transform:translateY(-10px);pointer-events:none;transition:.25s}.links.open{opacity:1;transform:none;pointer-events:auto}}
+
+/* Hero Section */
+.hero{background:radial-gradient(circle at 50% 10%, #7c2d12 0%, #291107 60%, #18120e 100%);color:#fff;padding:90px 0;position:relative;overflow:hidden}
+.grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative}
+@media(max-width:900px){.grid2{grid-template-columns:1fr};.hero{padding:60px 0}}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px;background:rgba(234,88,12,0.25);border:1px solid rgba(251,146,60,0.5);color:#fed7aa;margin-bottom:20px}
+.hero h1{font-size:clamp(36px,5.5vw,62px);font-weight:900;margin-bottom:18px}
+.grad{background:linear-gradient(90deg,#fb923c,#f43f5e,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:#fed7aa;font-size:18px;max-width:520px;margin-bottom:30px}
+.row{display:flex;flex-wrap:wrap;gap:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.15)}
+.stats b{display:block;font-size:30px;font-weight:900;color:#fff}.stats span{font-size:12px;color:#fed7aa}
+
+.glass{background:rgba(41, 17, 7, 0.85);backdrop-filter:blur(16px);border:1px solid rgba(251, 146, 60, 0.25);border-radius:24px;padding:26px;box-shadow:0 20px 40px rgba(0,0,0,0.4)}
+.mon{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.12);font-weight:700;font-size:14px;color:#fef08a}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#10b981;margin-right:8px;animation:ping 1.6s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(16,185,129,.7)}100%{box-shadow:0 0 0 12px rgba(16,185,129,0)}}
+.mrow{display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(24, 18, 14, 0.9);border:1px solid rgba(251, 146, 60, 0.15);border-radius:16px;padding:14px 16px;margin-bottom:12px;transition:border-color .25s,transform .25s}
+.mrow:hover{border-color:#fb923c;transform:translateX(4px)}
+.mrow small{display:block;color:#d1d5db;font-size:12px}
+.tag{font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;white-space:nowrap}
+.t-ok{background:rgba(16,185,129,0.2);color:#34d399}.t-bad{background:rgba(225,29,72,0.2);color:#fb7185}.t-b{background:rgba(234,88,12,0.25);color:#fb923c}.t-a{background:rgba(245,158,11,0.2);color:#fcd34d}
+
+/* Sections */
+section{padding:90px 0}
+.head{text-align:center;max-width:640px;margin:0 auto 52px}
+.eyebrow{display:inline-block;color:var(--primary);background:var(--surface2);border:1px solid var(--border);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:12px}
+.head h2{font-size:clamp(30px,4vw,42px);font-weight:900;margin-bottom:10px}.head p{color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:32px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--primary);box-shadow:0 20px 40px rgba(234,88,12,0.18)}
+.ico{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:26px;margin-bottom:20px;background:var(--surface2);transition:transform .3s}
+.card:hover .ico{transform:rotate(-8deg) scale(1.1)}
+.card h3{font-size:22px;margin-bottom:8px;font-weight:800}.card p{color:var(--muted);font-size:14px;margin-bottom:16px}
+.card ul{list-style:none;padding:0;font-size:13px;font-weight:600;margin-bottom:22px;display:grid;gap:10px}
+.card li::before{content:"✓";color:var(--primary);font-weight:900;margin-right:8px}.card .btn{margin-top:auto}
+
+/* Showcase Section */
+.show{background:linear-gradient(135deg, #241b14, #18120e);color:#fef3c7}
+.show .head p{color:#d1d5db}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#33241b;border:1px solid #573822;border-radius:24px;padding:8px;width:fit-content;max-width:100%;margin:0 auto 32px}
+.tab{border:0;background:transparent;color:#d1d5db;font:700 14px Inter,sans-serif;padding:12px 24px;border-radius:16px;cursor:pointer;transition:all .25s}
+.tab:hover{background:#573822;color:#fff}.tab:active{transform:scale(.96)}
+.tab.active{background:linear-gradient(135deg, #ea580c, #f59e0b);color:#fff;box-shadow:0 6px 18px rgba(234,88,12,0.4)}
+.panel{background:#18120e;border:1px solid #573822;border-radius:24px;padding:32px;max-width:980px;margin:auto;box-shadow:0 20px 50px rgba(0,0,0,0.6)}
+.view{display:none}.view.active{display:block;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.ph{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-bottom:18px;margin-bottom:20px;border-bottom:1px solid #33241b}
+.ph h3{font-size:20px;color:#fff}.ph p{font-size:12px;color:#d1d5db}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:580px;font-size:14px}
+th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#fb923c;padding:14px;background:#241b14}
+td{padding:14px;border-bottom:1px solid #33241b}tbody tr{transition:background .2s}tbody tr:hover{background:#33241b}
+.code{font-family:ui-monospace,Menlo,monospace;color:#fb923c;font-weight:700}
+
+.wo{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.wo>div{background:#241b14;border:1px solid #573822;border-radius:20px;padding:20px;transition:transform .25s,border-color .25s}
+.wo>div:hover{transform:translateY(-4px);border-color:#ea580c}
+.wo small{color:#fb923c;font-weight:800;text-transform:uppercase;font-size:11px;letter-spacing:.05em}.wo h4{color:#fff;margin:6px 0;font-size:18px}
+.prog{height:10px;border-radius:99px;background:#33241b;overflow:hidden;margin-top:12px}.prog i{display:block;height:100%;border-radius:99px;transition:width 1s ease}
+
+.est{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}@media(max-width:700px){.est{grid-template-columns:1fr}}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}
+input,select,textarea{width:100%;font:400 15px Inter,sans-serif;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px;transition:border-color .25s,box-shadow .25s}
+input:hover,select:hover,textarea:hover{border-color:var(--primary)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--primary);box-shadow:0 0 0 4px rgba(234,88,12,0.25)}
+input.err,textarea.err{border-color:var(--bad);box-shadow:0 0 0 4px rgba(225,29,72,.2)}
+.panel select,.panel input[type=range]{background:#241b14;color:#fff;border-color:#573822}input[type=range]{padding:0;accent-color:#ea580c}
+.res{background:#241b14;border:1px solid #573822;border-radius:22px;padding:32px;text-align:center}.res h2{font-size:48px;color:#fff;margin:10px 0;font-weight:900}.res p{font-size:12px;color:#d1d5db;margin-bottom:20px}
+
+/* Location Section */
+.loc{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:800px){.loc{grid-template-columns:1fr}}
+.map{min-height:300px;border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);display:grid;place-items:center;text-align:center;padding:32px;background:linear-gradient(135deg,var(--surface2),var(--surface));position:relative;overflow:hidden}
+.map::before{content:"";position:absolute;inset:0;opacity:.5;background:linear-gradient(var(--border) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--border) 1px,transparent 1px) 0 0/40px 40px}
+.map>*{position:relative}.pin{font-size:48px;animation:bob 2s infinite ease-in-out}@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* Reviews */
+.quote{font-style:italic;color:var(--muted);font-size:15px;margin:14px 0 20px}.stars{color:var(--accent);letter-spacing:3px;font-size:16px}
+.who{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:18px;border-top:1px solid var(--border)}
+.av{width:46px;height:46px;border-radius:14px;color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px;background:linear-gradient(135deg,#ea580c,#e11d48)}
+.who b{display:block;font-size:15px;font-weight:700}.who small{color:var(--muted);font-size:12px}
+.card.new{animation:fadeUp .5s ease}
+
+.form{background:linear-gradient(135deg, #241b14, #18120e);color:#fef3c7;border-radius:28px;padding:40px;max-width:760px;margin:50px auto 0;box-shadow:var(--shadow);border:1px solid #573822}
+.form h3{font-size:26px;text-align:center;color:#fff;font-weight:900}.form>p{text-align:center;color:#d1d5db;font-size:14px;margin:6px 0 26px}
+.form input,.form select,.form textarea,.modal input,.modal select{background:#33241b;border-color:#573822;color:#fff}
+.form label,.modal label{color:#fed7aa;font-size:13px}::placeholder{color:#9ca3af}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}@media(max-width:600px){.fg{grid-template-columns:1fr}}
+.ferr{color:#fb7185;font-size:12px;margin-top:4px;min-height:0}
+
+/* Footer */
+footer{background:#110c09;color:#d1d5db;padding:60px 0 30px;border-top:1px solid #33241b}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:32px;margin-bottom:36px}@media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+footer h5{color:#fff;font-size:15px;margin-bottom:16px;font-weight:800}footer li{list-style:none;margin-bottom:10px;font-size:14px}footer ul{padding:0}
+footer a{transition:color .2s}footer a:hover{color:#fb923c}
+.nl{display:flex;gap:10px}.nl input{background:#241b14;border-color:#573822;color:#fff}
+.copy{border-top:1px solid #33241b;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13px;color:#9ca3af}
+
+/* WhatsApp Floating Button */
+.wa{position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:45;width:60px;height:60px;border-radius:50%;background:#22c55e;color:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 12px 28px rgba(34,197,94,.5);animation:wp 2.4s infinite;transition:transform .25s}
+.wa:hover{transform:scale(1.15) rotate(-8deg)}@keyframes wp{70%{box-shadow:0 0 0 18px rgba(34,197,94,0)}}
+
+/* Modal */
+.ov{position:fixed;inset:0;z-index:100;background:rgba(10, 6, 4, 0.75);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;overflow-y:auto}
+.ov.show{opacity:1;visibility:visible}
+.modal{width:100%;max-width:500px;max-height:92vh;overflow-y:auto;background:#241b14;color:#fef3c7;border:1px solid #573822;border-radius:26px;padding:30px;transform:translateY(20px) scale(.94);transition:transform .3s cubic-bezier(.2,.9,.3,1.2);box-shadow:0 25px 50px rgba(0,0,0,0.6)}
+.ov.show .modal{transform:none}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;font-weight:900;font-size:20px;color:#fff}
+.x{width:36px;height:36px;border-radius:12px;border:0;background:#33241b;color:#fff;cursor:pointer;font-size:18px;transition:background .2s,transform .3s}.x:hover{background:var(--bad);transform:rotate(90deg)}
+.modal .fg{grid-template-columns:1fr 1fr}@media(max-width:480px){.modal .fg{grid-template-columns:1fr}}
+
+/* Toasts */
+#toasts{position:fixed;top:calc(20px + env(safe-area-inset-top,0px));right:20px;z-index:200;display:grid;gap:10px;max-width:calc(100vw - 40px)}
+.toast{display:flex;gap:12px;align-items:center;min-width:260px;background:var(--surface);color:var(--text);border:1px solid var(--border);border-left:5px solid var(--primary);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);font-size:14px;font-weight:600;animation:tin .35s ease}
+.toast.success{border-left-color:var(--ok)}.toast.error{border-left-color:var(--bad)}.toast.warn{border-left-color:var(--accent)}
+.toast.out{animation:tout .3s ease forwards}@keyframes tin{from{opacity:0;transform:translateX(30px)}}@keyframes tout{to{opacity:0;transform:translateX(30px)}}
+
+/* Reveal animation */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<a class="wa" href="https://wa.me/?text=Hello%20Himanshu%20ERP%20Team%2C%20I%20would%20like%20to%20inquire%20about%20a%20live%20demo." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<div id="toasts" aria-live="polite"></div>
+
+<div class="bar">
+    <span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-fire text-amber-200"></i> <b>🔥 HIGH DEMAND:</b> Cloud ERP v4.8 with AI Stock Forecasting &amp; Multi-Plant Control is live.</span> 
+    <a href="#" data-open="demo">Book Demo →</a>
+</div>
+
+<nav>
+ <div class="wrap nav">
+  <a class="logo" href="#top"><span class="m">H</span><span>Himanshu<em>ERP</em></span></a>
+  <div class="links" id="links">
+   <a class="l" href="#solutions">Solutions</a>
+   <a class="l" href="#showcase">App Showcase</a>
+   <a class="l" href="#location">Headquarters</a>
+   <a class="l" href="#reviews">Reviews</a>
+   <button class="icon-btn" id="theme" aria-label="Toggle dark mode">🌙</button>
+   <button class="btn sm" data-open="demo"><i class="fa-regular fa-calendar-check mr-1"></i> Book Demo</button>
+  </div>
+  <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="wrap grid2">
+  <div>
+   <span class="pill"><i class="fa-solid fa-bolt text-amber-300"></i> Next-Gen Enterprise Suite</span>
+   <h1>Orchestrate Your Entire <span class="grad">Manufacturing Ecosystem</span></h1>
+   <p class="lead">Unify multi-site inventory, intelligent shop-floor scheduling, supply chain tracking and real-time financial reporting in one high-performance platform.</p>
+   <div class="row">
+    <button class="btn" data-open="demo"><i class="fa-solid fa-fire text-amber-200"></i> Schedule Live Demo</button>
+    <a class="btn ghost" href="https://wa.me/?text=Hello%20Himanshu%20ERP%20Team%2C%20I%20need%20quick%20assistance." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp text-emerald-400"></i> Quick Chat</a>
+   </div>
+   <div class="stats">
+       <div><b>99.9%</b><span>Stock Precision Rate</span></div>
+       <div><b>40%</b><span>Avg Downtime Reduction</span></div>
+       <div><b>500+</b><span>Global Enterprises</span></div>
+   </div>
+  </div>
+  <div class="glass">
+   <div class="mon"><span><span class="dot"></span>Plant #1 Real-Time Monitor</span><span class="tag t-b">ONLINE</span></div>
+   <div class="mrow"><div><b>Assembly Line Alpha</b><small>Hydraulic press unit active</small></div><span class="tag t-ok">Optimal 96%</span></div>
+   <div class="mrow"><div><b>Warehouse Bay 4</b><small>Automated GRN verification</small></div><span class="tag t-b">Synced</span></div>
+   <div class="mrow"><div><b>Quality Control Audit</b><small>Batch #HIM-8821 passed</small></div><span class="tag t-a">Verified</span></div>
+   <button class="btn sm" style="width:100%;margin-top:10px" data-open="demo">Test Drive Live Environment →</button>
+  </div>
+ </div>
+</header>
+
+<section id="solutions">
+ <div class="wrap">
+  <div class="head rv"><span class="eyebrow">Enterprise Modules</span><h2>Built for Total Operational Mastery</h2><p>Engineered to solve complex discrete manufacturing and multi-warehouse supply chain bottlenecks.</p></div>
+  <div class="cards">
+   <div class="card rv"><div class="ico">🏭</div><h3>Production &amp; MRP II</h3><p>Multi-level BOM, automated work order scheduling, real-time WIP tracking and preventive maintenance alerts.</p><ul><li>Dynamic multi-level BOM</li><li>Subcontractor job tracking</li><li>Bottleneck detection AI</li></ul><button class="btn outline sm" data-open="demo" data-module="Manufacturing">Request Module Demo</button></div>
+   <div class="card rv"><div class="ico">📦</div><h3>Smart Warehouse</h3><p>Multi-location stock visibility, barcode &amp; QR integration, automated reorder triggers and bin-level mapping.</p><ul><li>Real-time inventory tracking</li><li>Auto-replenishment rules</li><li>Batch &amp; serial tracing</li></ul><button class="btn outline sm" data-open="demo" data-module="Warehouse">Request Module Demo</button></div>
+   <div class="card rv"><div class="ico">🧮</div><h3>Financials &amp; Costing</h3><p>Integrated ledger, automated payables/receivables, job-cost variance analysis and tax compliance reporting.</p><ul><li>Real-time job costing</li><li>Automated bank reconciliation</li><li>Multi-currency support</li></ul><button class="btn outline sm" data-open="demo" data-module="Financials">Request Module Demo</button></div>
+  </div>
+ </div>
+</section>
+
+<section class="show" id="showcase">
+ <div class="wrap">
+  <div class="head rv"><span class="eyebrow">Interactive Demo Showcase</span><h2>Test Drive Application Modules</h2><p>Try our responsive enterprise UI components.</p></div>
+  <div class="tabs" role="tablist">
+   <button class="tab active" data-view="v1" role="tab">📦 Inventory Control</button>
+   <button class="tab" data-view="v2" role="tab">⏱ Work Order Schedule</button>
+   <button class="tab" data-view="v3" role="tab">🧮 Cost Estimator</button>
+  </div>
+  <div class="panel">
+   <div class="view active" id="v1">
+    <div class="ph"><div><h3>Central Warehouse Stock Control</h3><p>Multi-facility inventory telemetry</p></div><button class="btn sm" id="sync"><i>🔄</i> Sync Stock</button></div>
+    <div class="scroll"><table><thead><tr><th>Item Code</th><th>Material</th><th>Stock</th><th>Status</th><th style="text-align:right">Action</th></tr></thead><tbody>
+     <tr><td class="code">RM-5012</td><td>Cold Rolled Steel Sheets (Grade A)</td><td>1,420 Units</td><td><span class="tag t-ok">Adequate</span></td><td style="text-align:right"><button class="btn ghost sm act" data-item="RM-5012" data-kind="inspect">Inspect</button></td></tr>
+     <tr><td class="code">RM-8834</td><td>High-Tensile Fasteners &amp; Bolts</td><td>140 Units</td><td><span class="tag t-bad">Refill Needed</span></td><td style="text-align:right"><button class="btn sm act" style="background:var(--bad)" data-item="RM-8834" data-kind="reorder">Auto-Reorder</button></td></tr>
+     <tr><td class="code">SF-2201</td><td>Machined Aluminum Housings</td><td>890 Units</td><td><span class="tag t-ok">Adequate</span></td><td style="text-align:right"><button class="btn ghost sm act" data-item="SF-2201" data-kind="inspect">Inspect</button></td></tr>
+    </tbody></table></div>
+   </div>
+   <div class="view" id="v2">
+    <div class="ph"><div><h3>Shop Floor Workstation Scheduling</h3><p>Real-time production line utilization</p></div><button class="btn sm ok" id="addWo"><i>＋</i> New Work Order</button></div>
+    <div class="wo" id="woList">
+     <div><small>Line 01 · Assembly</small><h4>Batch #B-991</h4><span style="font-size:12px;color:#d1d5db">78% completed</span><div class="prog"><i data-w="78" style="background:#ea580c"></i></div></div>
+     <div><small>Line 02 · Welding</small><h4>Batch #B-992</h4><span style="font-size:12px;color:#d1d5db">45% completed</span><div class="prog"><i data-w="45" style="background:#f59e0b"></i></div></div>
+     <div><small>Line 03 · Testing</small><h4>Batch #B-988</h4><span style="font-size:12px;color:#d1d5db">95% completed</span><div class="prog"><i data-w="95" style="background:#10b981"></i></div></div>
+    </div>
+   </div>
+   <div class="view" id="v3">
+    <div class="ph"><div><h3>Dynamic Production Cost Simulator</h3><p>Calculate projected manufacturing overheads</p></div></div>
+    <div class="est">
+     <div>
+      <label for="vol" style="color:#fef3c7">Production Volume</label>
+      <input type="range" id="vol" min="100" max="10000" step="100" value="1500">
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:#d1d5db;margin:6px 0 18px"><span>100</span><b id="volV" style="color:#fb923c">1,500 Units</b><span>10,000</span></div>
+      <label for="cx" style="color:#fef3c7">Manufacturing Complexity</label>
+      <select id="cx"><option value="1">Standard Assembly (1.0x)</option><option value="1.3">Precision Multi-Stage (1.3x)</option><option value="1.6">Custom Engineered (1.6x)</option></select>
+     </div>
+     <div class="res"><span class="tag t-b">ESTIMATED COST</span><h2 id="cost">$42,000</h2><p>Includes raw materials, direct labor allocation and factory overheads.</p><button class="btn" style="width:100%" data-open="demo">Get Detailed Quotation</button></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Location Section updated to Mangal Pandey Park, Azad Nagar, Lucknow -->
+<section id="location">
+ <div class="wrap">
+  <div class="head rv"><span class="eyebrow">Global Headquarters</span><h2>Visit Our Corporate Offices</h2><p>Schedule an on-site consultation or technical demonstration with our engineering team.</p></div>
+  <div class="loc">
+   <div style="display:grid;gap:20px">
+    <div class="card rv">
+        <div class="ico">🏢</div>
+        <h3>Himanshu ERP Solutions</h3>
+        <p>Mangal Pandey Park, Azad Nagar (Nagar Nigam)<br>Lucknow, Uttar Pradesh, India</p>
+        <div style="font-size:13px;font-weight:600;display:grid;gap:6px;margin-top:10px">
+            <span>📞 +91 (800) 555-HIMANSHU</span>
+            <span>✉️ contact@himanshuerp.com</span>
+        </div>
+    </div>
+    <div class="card rv" style="flex-direction:row;align-items:center;justify-content:space-between;gap:12px">
+        <div><h3 style="font-size:16px">Instant WhatsApp Assistance</h3><p style="margin:0">Average reply time: under 5 minutes</p></div>
+        <a class="btn ok sm" href="https://wa.me/?text=Hello%20Himanshu%20ERP%20Team" target="_blank" rel="noopener">Open Chat</a>
+    </div>
+   </div>
+   <div class="map rv">
+    <div>
+     <div class="pin">📍</div>
+     <h3>Mangal Pandey Park, Azad Nagar</h3>
+     <p style="color:var(--muted);margin:6px 0 16px">Lucknow Headquarters</p>
+     <a class="btn" href="https://www.google.com/maps/place/Mangal+Pandey+park,+Azad+Nagar+(%E0%A4%A8%E0%A4%97%E0%A4%B0+%E0%A4%A8%E0%A4%BF%E0%A4%97%E0%A4%AE)/@26.7713729,80.8722794,18z/data=!3m1!4b1!4m6!3m5!1s0x399bf95d2713a6f9:0x580184663c205dc2!8m2!3d26.7714204!4d80.8721266!16s%2Fg%2F11pgrk7pm9" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="reviews" style="background:var(--surface)">
+ <div class="wrap">
+  <div class="head rv"><span class="eyebrow">Client Testimonials</span><h2>Trusted by Industry Leaders</h2><p>Read reviews from enterprise directors, or share your own feedback.</p></div>
+  <div class="cards" id="reviewList">
+   <div class="card rv"><div class="stars">★★★★★</div><p class="quote">"Himanshu ERP transformed our shop floor visibility. Material tracking and dispatch times improved by 40% within two months."</p><div class="who"><div class="av">RK</div><div><b>Rajesh Kumar</b><small>Operations Director, Apex Industries</small></div></div></div>
+   <div class="card rv"><div class="stars">★★★★★</div><p class="quote">"The multi-warehouse inventory module is foolproof. Automated replenishment stopped our production delays completely."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">AS</div><div><b>Ananya Sharma</b><small>Supply Chain Head, Nova Manufacturing</small></div></div></div>
+   <div class="card rv"><div class="stars">★★★★☆</div><p class="quote">"Clean interface, powerful reporting engine and excellent support during database migration. Highly recommended."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#059669,#10b981)">VG</div><div><b>Vikram Gupta</b><small>Managing Director, Trident Auto Components</small></div></div></div>
+  </div>
+  <form class="form rv" id="rf" novalidate>
+   <h3>Submit Your Review</h3><p>Your feedback is saved in this browser.</p>
+   <div class="fg"><div><label for="rn">Your Name</label><input id="rn" placeholder="Full name"><div class="ferr"></div></div><div><label for="rc">Company &amp; Designation</label><input id="rc" placeholder="e.g. CTO, Vertex Corp"><div class="ferr"></div></div></div>
+   <div class="fg"><div><label for="rr">Rating</label><select id="rr"><option value="5">★★★★★ Outstanding</option><option value="4">★★★★ Very Good</option><option value="3">★★★ Average</option></select></div><div><label for="rm">Module Evaluated</label><select id="rm"><option>Manufacturing</option><option>Warehouse</option><option>Financials</option></select></div></div>
+   <div style="margin-bottom:18px"><label for="rt">Review Comments</label><textarea id="rt" rows="3" placeholder="Write your experience..."></textarea><div class="ferr"></div></div>
+   <button class="btn" style="width:100%" type="submit"><i class="fa-solid fa-paper-plane mr-2"></i> Submit Review</button>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <div><a class="logo" href="#top" style="color:#fff;margin-bottom:14px"><span class="m">H</span><span>Himanshu<em>ERP</em></span></a><p style="font-size:14px">Cloud ERP engineered for discrete manufacturing, multi-site warehousing and enterprise scale.</p></div>
+   <div><h5>Solutions</h5><ul><li><a href="#solutions">Manufacturing &amp; MRP</a></li><li><a href="#solutions">Warehouse Systems</a></li><li><a href="#solutions">Financial Accounting</a></li></ul></div>
+   <div><h5>Company</h5><ul><li><a href="#location">Headquarters</a></li><li><a href="#reviews">Client Reviews</a></li><li><a href="https://wa.me/?text=Hello" target="_blank" rel="noopener" style="color:#22c55e;font-weight:600"><i class="fa-brands fa-whatsapp"></i> WhatsApp Support</a></li></ul></div>
+   <div><h5>Newsletter</h5><p style="font-size:14px;margin-bottom:10px">Quarterly updates on manufacturing cloud tech.</p><form class="nl" id="nl" novalidate><input type="email" id="ne" placeholder="Corporate email" aria-label="Email"><button class="btn sm" type="submit">Join</button></form></div>
+  </div>
+  <div class="copy"><span>© 2026 Himanshu ERP Systems Inc. All rights reserved.</span><span>Architecture ready for ASP.NET Core &amp; SQL Server</span></div>
+ </div>
+</footer>
+
+<div class="ov" id="demo" aria-hidden="true">
+ <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dt">
+  <div class="mh"><span id="dt">📅 Book Demo Appointment</span><button class="x" data-close aria-label="Close">×</button></div>
+  <form id="df" novalidate>
+   <div style="margin-bottom:14px"><label for="dn">Full Name</label><input id="dn" placeholder="e.g. John Doe"><div class="ferr"></div></div>
+   <div class="fg"><div><label for="de">Work Email</label><input id="de" type="email" placeholder="john@company.com"><div class="ferr"></div></div><div><label for="dp">Phone</label><input id="dp" type="tel" placeholder="+1 555 000 0000"><div class="ferr"></div></div></div>
+   <div class="fg"><div><label for="dd">Preferred Date</label><input id="dd" type="date"><div class="ferr"></div></div><div><label for="dtm">Time Slot</label><select id="dtm"><option>10:00 AM</option><option>02:00 PM</option><option>04:30 PM</option></select></div></div>
+   <div style="margin-bottom:20px"><label for="dm">Module of Interest</label><select id="dm"><option value="All Modules">Complete Enterprise Suite</option><option>Manufacturing</option><option>Warehouse</option><option>Financials</option></select></div>
+   <button class="btn" style="width:100%" type="submit" id="dsub">Confirm Appointment</button>
+  </form>
+ </div>
+</div>
+
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const store={get(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return[]}},add(k,v){try{const a=this.get(k);a.push(v);localStorage.setItem(k,JSON.stringify(a))}catch(e){}}};
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function toast(msg,type='info'){const t=document.createElement('div');t.className='toast '+type;t.textContent=({success:'✅ ',error:'⛔ ',warn:'⚠️ ',info:'ℹ️ '}[type])+msg;$('#toasts').appendChild(t);setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),300)},3200)}
+
+document.addEventListener('click',e=>{const b=e.target.closest('.btn');if(!b||b.disabled)return;const r=b.getBoundingClientRect(),s=Math.max(r.width,r.height),d=document.createElement('span');d.className='ripple';d.style.cssText=`position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);width:${s}px;height:${s}px;left:${e.clientX-r.left-s/2}px;top:${e.clientY-r.top-s/2}px;animation:rip .6s ease-out;pointer-events:none`;b.appendChild(d);setTimeout(()=>d.remove(),600)});
+
+const root=document.documentElement,th=$('#theme');
+function setTheme(t){root.dataset.theme=t;th.textContent=t==='dark'?'☀️':'🌙'}
+setTheme(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+th.onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
+
+const bg=$('#burger'),lk=$('#links');
+bg.onclick=()=>{const o=lk.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+$$('#links a').forEach(a=>a.addEventListener('click',()=>{lk.classList.remove('open');bg.setAttribute('aria-expanded',false)}));  const secs=$$
+('section[id]'),navA=$$('.links a.l'); const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45\% 0px -50\% 0px'}); secs.forEach(s=>spy.observe(s)); const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12}); const rv=()=>$$('.rv:not(.in)').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});rv();
+
+let lastFocus;
+function openM(m,mod){lastFocus=document.activeElement;if(mod)$('#dm').value=mod;m.classList.add('show');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>$('input',m).focus(),250)}
+function closeM(m){m.classList.remove('show');m.setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus&&lastFocus.focus()}
+document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){e.preventDefault();openM($('#'+o.dataset.open),o.dataset.module)}
+ if(e.target.closest('[data-close]')||e.target.classList.contains('ov'))closeM($('#demo'))});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#demo').classList.contains('show'))closeM($('#demo'))});
+const dd=$('#dd');dd.min=new Date().toISOString().split('T')[0];
+
+function bad(el,msg){el.classList.add('err');const f=el.parentElement.querySelector('.ferr');if(f)f.textContent=msg;return false}
+function clr(f){$$('.err',f).forEach(x=>x.classList.remove('err'));$$('.ferr',f).forEach(x=>x.textContent='')}
+const mail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);$$('input,textarea').forEach(i=>i.addEventListener('input',()=>{i.classList.remove('err');const f=i.parentElement.querySelector('.ferr');if(f)f.textContent=''}));
+
+$('#df').addEventListener('submit',e=>{e.preventDefault();const f=e.target;clr(f);let ok=true;
+ if($('#dn').value.trim().length<2)ok=bad($('#dn'),'Please enter your name');
+ if(!mail($('#de').value.trim()))ok=bad($('#de'),'Enter a valid email');
+ if($('#dp').value.replace(/\D/g,'').length<7)ok=bad($('#dp'),'Enter a valid phone');
+ if(!dd.value)ok=bad(dd,'Pick a date');
+ if(!ok)return toast('Please fix the highlighted fields','error');
+ const b=$('#dsub');b.disabled=true;b.textContent='Booking…';
+ setTimeout(()=>{store.add('erpAppointments',{name:$('#dn').value.trim(),email:$('#de').value.trim(),phone:$('#dp').value.trim(),date:dd.value,slot:$('#dtm').value,module:$('#dm').value,at:new Date().toISOString()});
+  b.disabled=false;b.textContent='Confirm Appointment';f.reset();closeM($('#demo'));toast('Appointment booked! We will email a confirmation.','success')},900)});
+
+$$('.tab').forEach(t=>t.addEventListener('click',()=>{$$
+('.tab').forEach(x=>x.classList.toggle('active',x===t));$$('.view').forEach(v=>v.classList.toggle('active',v.id===t.dataset.view));animBars()})); function animBars(){$$('.prog i').forEach(i=>{i.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>i.style.width=i.dataset.w+'%'))})}
+
+function calc(){const v=+$('#vol').value;$('#volV').textContent=v.toLocaleString()+' Units';$('#cost').textContent='$'+Math.round(v*28*$('#cx').value).toLocaleString()}
+$('#vol').oninput=calc;$('#cx').onchange=calc;calc();  $$('.act').forEach(b=>b.addEventListener('click',()=>{const it=b.dataset.item;if(b.dataset.kind==='reorder'){b.disabled=true;b.textContent='Queued ✓';b.style.background='var(--ok)';toast('Auto-reorder initiated for '+it,'success')}else toast('Inspection report opened for '+it,'info')}));
+$('#sync').onclick=function(){const b=this;b.disabled=true;b.textContent='Syncing…';setTimeout(()=>{b.disabled=false;b.innerHTML='<i>🔄</i> Sync Stock';toast('Stock synced successfully','success')},1100)};
+
+let wn=993;$('#addWo').onclick=()=>{const d=document.createElement('div'),p=Math.floor(Math.random()*60)+10;d.className='card';d.style.cssText='background:#241b14;border-color:#573822;color:#fef3c7;padding:20px;animation:fadeUp .4s';d.innerHTML=`<small style="color:#fb923c;font-weight:800;font-size:11px;text-transform:uppercase">New · Line 0${(wn%3)+1}</small><h4 style="color:#fff;margin:6px 0">Batch #B-${wn++}</h4><span style="font-size:12px;color:#d1d5db">${p}% completed</span><div class="prog"><i style="width:${p}%;background:#ea580c"></i></div>`;$('#woList').appendChild(d);toast('Work order created','success')};
+animBars();
+
+function card(r,fresh){const i=r.name.split(/\s+/).map(n=>n[0]).join('').slice(0,2).toUpperCase();return `<div class="card ${fresh?'new':''}"><div class="stars">${'★'.repeat(r.rating)+'☆'.repeat(5-r.rating)}</div><p class="quote">"${esc(r.text)}"</p><div class="who"><div class="av">${esc(i)}</div><div><b>${esc(r.name)}</b><small>${esc(r.company)} (${esc(r.module)})</small></div></div></div>`}
+store.get('erpReviews').forEach(r=>$('#reviewList').insertAdjacentHTML('afterbegin',card(r,false)));
+$('#rf').addEventListener('submit',e=>{e.preventDefault();const f=e.target;clr(f);let ok=true;
+ if($('#rn').value.trim().length<2)ok=bad($('#rn'),'Enter your name');
+ if($('#rc').value.trim().length<2)ok=bad($('#rc'),'Enter company & role');
+ if($('#rt').value.trim().length<10)ok=bad($('#rt'),'Please write at least 10 characters');
+ if(!ok)return toast('Please complete the form','error');
+ const r={name:$('#rn').value.trim(),company:$('#rc').value.trim(),rating:+$('#rr').value,module:$('#rm').value,text:$('#rt').value.trim()};
+ store.add('erpReviews',r);$('#reviewList').insertAdjacentHTML('afterbegin',card(r,true));f.reset();toast('Thank you! Your review was saved.','success')});
+
+$('#nl').addEventListener('submit',e=>{e.preventDefault();const i=$('#ne');if(!mail(i.value.trim()))return toast('Please enter a valid email','warn');i.value='';toast('Subscribed to the newsletter','success')});
+})();
+</script>
+</body>
+</html>
