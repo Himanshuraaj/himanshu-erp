@@ -643,7 +643,7 @@ const mail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);$$('input,textarea').forEach(
 // Shared Google Sheets Script URL
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxS8i_EQj_ID9ZnWHlo-D2qSVNz_eN2l557fnD-noqM9_LJGm9ye7IcplxMJzBx8xWY/exec';
 
-// 1. Book Demo / Appointment Form Integration to Google Sheets
+// 1. Book Demo / Appointment Form Integration
 const demoForm = document.getElementById('df');
 demoForm.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -665,8 +665,8 @@ demoForm.addEventListener('submit', function(e) {
     name: $('#dn').value.trim(),
     email: $('#de').value.trim(),
     phone: $('#dp').value.trim(),
-    date: dd.value + ' (' + $('#dtm').value + ')',
-    message: 'Module: ' + $('#dm').value
+    date: dd.value + ' | Time: ' + $('#dtm').value,
+    module: $('#dm').value
   };
 
   fetch(scriptURL, {
@@ -676,7 +676,6 @@ demoForm.addEventListener('submit', function(e) {
     body: JSON.stringify(appointmentData)
   })
   .then(() => {
-    store.add('erpAppointments', appointmentData);
     b.disabled = false;
     b.textContent = 'Confirm Appointment';
     demoForm.reset();
@@ -691,17 +690,7 @@ demoForm.addEventListener('submit', function(e) {
   });
 });
 
-$$('.tab').forEach(t=>t.addEventListener('click',()=>{$$
-('.tab').forEach(x=>x.classList.toggle('active',x===t));$$('.view').forEach(v=>v.classList.toggle('active',v.id===t.dataset.view));animBars()})); function animBars(){$$('.prog i').forEach(i=>{i.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>i.style.width=i.dataset.w+'%'))})}
-
-function calc(){const v=+$('#vol').value;$('#volV').textContent=v.toLocaleString()+' Units';$('#cost').textContent='$'+Math.round(v*28*$('#cx').value).toLocaleString()}
-$('#vol').oninput=calc;$('#cx').onchange=calc;calc(); $$('.act').forEach(b=>b.addEventListener('click',()=>{const it=b.dataset.item;if(b.dataset.kind==='reorder'){b.disabled=true;b.textContent='Queued ✓';b.style.background='var(--ok)';toast('Auto-reorder initiated for '+it,'success')}else toast('Inspection report opened for '+it,'info')}));
-$('#sync').onclick=function(){const b=this;b.disabled=true;b.textContent='Syncing…';setTimeout(()=>{b.disabled=false;b.innerHTML='<i>🔄</i> Sync Stock';toast('Stock synced successfully','success')},1100)};
-
-let wn=993;$('#addWo').onclick=()=>{const d=document.createElement('div'),p=Math.floor(Math.random()*60)+10;d.className='card';d.style.cssText='background:#241b14;border-color:#573822;color:#fef3c7;padding:20px;animation:fadeUp .4s';d.innerHTML=`<small style="color:#fb923c;font-weight:800;font-size:11px;text-transform:uppercase">New · Line 0${(wn%3)+1}</small><h4 style="color:#fff;margin:6px 0">Batch #B-${wn++}</h4><span style="font-size:12px;color:#d1d5db">${p}% completed</span><div class="prog"><i style="width:${p}%;background:#ea580c"></i></div>`;$('#woList').appendChild(d);toast('Work order created','success')};
-animBars();
-
-// 2. Main Enquiry & Review Form Integration Script
+// 2. Main Enquiry & Review Form Integration
 const leadForm = document.getElementById('leadForm');
 const formStatus = document.getElementById('formStatus');
 
