@@ -559,7 +559,9 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
 <!-- Reviews & Google Sheets Integrated Form Section -->
 <section id="reviews">
  <div class="wrap">
-  <div class="head rv"><span class="eyebrow">Client Testimonials</span><h2>Trusted by Industry Leaders</h2><p>Read reviews from directors, or share your feedback directly.</p></div>
+  <div class="head rv"><span class="eyebrow">Client Testimonials</span>
+      <h2>Trusted by Industry Leaders</h2><p>Read reviews from directors, or share your feedback directly.</p>
+  </div>
   <div class="cards" id="reviewList">
    <div class="card rv"><div class="stars">★★★★★</div><p class="quote">"Himanshu's expertise in .NET and database architecture transformed our university ERP performance. Highly skilled and reliable."</p><div class="who"><div class="av">RK</div><div><b>Rajesh Kumar</b><small>Operations Director, Apex Industries</small></div></div></div>
    <div class="card rv"><div class="stars">★★★★★</div><p class="quote">"Clean interface, robust REST APIs and flawless SQL Server integration. Exceptional software developer!"</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">AS</div><div><b>Ananya Sharma</b><small>Supply Chain Head, Nova Manufacturing</small></div></div></div>
@@ -568,7 +570,11 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
   
   <!-- Review / Contact Form connected to Google Sheet -->
   <form class="form rv" id="leadForm" novalidate>
-   <h3>Send an Enquiry / Review</h3>Your Feedback Matters to Us! 💙<p>We value your feedback! Share your experience and suggestions to help us serve you better.</p>
+   <h3>Send an Enquiry / Review</h3>
+       <div class="head rv">
+      Your Feedback Matters to Us! 💙
+           </div>
+      <p> We value your feedback! Share your experience and suggestions to help us serve you better.</p>
    <div class="fg">
      <div><label for="name">Your Name</label><input id="name" name="name" placeholder="Full name" required><div class="ferr"></div></div>
      <div><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="john@company.com" required><div class="ferr"></div></div>
@@ -669,7 +675,7 @@ demoForm.addEventListener('submit', function(e) {
     name: $('#dn').value.trim(),
     email: $('#de').value.trim(),
     phone: $('#dp').value.trim(),
-    date: dd.value + ' | Time: ' + $('#dtm').value,
+    date: dd.value + ' (' + $('#dtm').value + ')',
     module: $('#dm').value
   };
 
