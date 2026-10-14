@@ -568,10 +568,14 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
   
   <!-- Review / Contact Form connected to Google Sheet -->
   <form class="form rv" id="leadForm" novalidate>
-   <h3>Send an Enquiry / Review</h3><p>Submissions save directly to your secure Google Sheet database.</p>
+   <h3>Send an Enquiry / Review</h3>Your Feedback Matters to Us! 💙<p>We value your feedback! Share your experience and suggestions to help us serve you better.</p>
    <div class="fg">
      <div><label for="name">Your Name</label><input id="name" name="name" placeholder="Full name" required><div class="ferr"></div></div>
      <div><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="john@company.com" required><div class="ferr"></div></div>
+   </div>
+   <div class="fg" style="margin-bottom:16px">
+     <div><label for="phone">Mobile Number</label><input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required><div class="ferr"></div></div>
+     <div><label for="subject">Subject</label><input id="subject" placeholder="Project or Review" required><div class="ferr"></div></div>
    </div>
    <div style="margin-bottom:18px">
      <label for="message">Message / Enquiry Details</label>
@@ -701,10 +705,12 @@ leadForm.addEventListener('submit', e => {
   let isValid = true;
   const nameVal = document.getElementById('name').value.trim();
   const emailVal = document.getElementById('email').value.trim();
+  const phoneVal = document.getElementById('phone').value.trim();
   const msgVal = document.getElementById('message').value.trim();
 
   if (nameVal.length < 2) isValid = bad(document.getElementById('name'), 'Please enter your name');
   if (!mail(emailVal)) isValid = bad(document.getElementById('email'), 'Enter a valid email address');
+  if (phoneVal.replace(/\D/g,'').length < 7) isValid = bad(document.getElementById('phone'), 'Enter a valid phone number');
   if (msgVal.length < 5) isValid = bad(document.getElementById('message'), 'Message must be at least 5 characters');
   
   if (!isValid) return toast('Please check form fields', 'error');
@@ -718,6 +724,7 @@ leadForm.addEventListener('submit', e => {
     type: 'enquiry',
     name: nameVal,
     email: emailVal,
+    phone: phoneVal,
     message: msgVal
   };
 
