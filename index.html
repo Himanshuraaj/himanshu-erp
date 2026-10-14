@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Himanshu ERP Solutions | Enterprise Manufacturing & Operations Suite</title>
+<title>Himanshu Raaj | Senior .NET Developer & Enterprise ERP Solutions</title>
+<!-- Favicon - Matches your website's orange 'H' logo perfectly -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2230%22 fill=%22url(%23grad)%22/><defs><linearGradient id=%22grad%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 stop-color=%22%23ea580c%22/><stop offset=%22100%25%22 stop-color=%22%23e11d48%22/></linearGradient></defs><text x=%2250%25%22 y=%2258%25%22 font-size=%2260%22 font-weight=%22900%22 fill=%22white%22 font-family=%22Inter, sans-serif%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>H</text></svg>">
+
+<!-- OR: Agar aap apni 'OIP2.png' image hi use karna chahte hain, toh is line ka use karein (Image ko root folder ya images folder mein rakhna): -->
+<!-- <link rel="icon" href="./Images/OIP2.png" type="image/png"> -->
+<!-- Professional Favicon matching your website's orange theme -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2230%22 fill=%22url(%23grad)%22/><defs><linearGradient id=%22grad%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 stop-color=%22%23ea580c%22/><stop offset=%22100%25%22 stop-color=%22%23e11d48%22/></linearGradient></defs><text x=%2250%25%22 y=%2258%25%22 font-size=%2260%22 font-weight=%22900%22 fill=%22white%22 font-family=%22Inter, sans-serif%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>H</text></svg>">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -14,10 +22,10 @@
     --text: #1e1b18;
     --muted: #6b7280;
     --border: #fed7aa;
-    --primary: #ea580c; /* Vibrant Orange */
+    --primary: #ea580c; 
     --primary-h: #c2410c;
-    --accent: #f59e0b; /* Warm Yellow */
-    --pink-red: #e11d48; /* Reddish Pink */
+    --accent: #f59e0b; 
+    --pink-red: #e11d48; 
     --ok: #059669;
     --bad: #e11d48;
     --shadow: 0 10px 30px rgba(234, 88, 12, 0.12);
@@ -64,8 +72,8 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color
 .logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px}
 .logo span.m{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#ea580c,#e11d48);box-shadow:0 6px 16px rgba(234,88,12,0.4);font-size:22px}
 .logo em{font-style:normal;color:var(--primary)}
-.links{display:flex;align-items:center;gap:6px}
-.links a.l{padding:8px 16px;border-radius:12px;font-weight:600;color:var(--muted);transition:background .25s,color .25s}
+.links{display:flex;align-items:center;gap:2px}
+.links a.l{padding:8px 10px;border-radius:10px;font-weight:600;font-size:14px;color:var(--muted);transition:background .25s,color .25s;white-space:nowrap}
 .links a.l:hover,.links a.l.active{background:var(--surface2);color:var(--primary)}
 .icon-btn{width:42px;height:42px;border-radius:14px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;transition:background .25s,transform .2s}
 .icon-btn:hover{background:var(--surface2)}.icon-btn:active{transform:scale(.92)}
@@ -77,12 +85,12 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color
 .grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative}
 @media(max-width:900px){.grid2{grid-template-columns:1fr};.hero{padding:60px 0}}
 .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px;background:rgba(234,88,12,0.25);border:1px solid rgba(251,146,60,0.5);color:#fed7aa;margin-bottom:20px}
-.hero h1{font-size:clamp(36px,5.5vw,62px);font-weight:900;margin-bottom:18px}
+.hero h1{font-size:clamp(34px,5vw,56px);font-weight:900;margin-bottom:18px}
 .grad{background:linear-gradient(90deg,#fb923c,#f43f5e,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{color:#fed7aa;font-size:18px;max-width:520px;margin-bottom:30px}
+.hero p.lead{color:#fed7aa;font-size:17px;max-width:540px;margin-bottom:30px}
 .row{display:flex;flex-wrap:wrap;gap:14px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.15)}
-.stats b{display:block;font-size:30px;font-weight:900;color:#fff}.stats span{font-size:12px;color:#fed7aa}
+.stats b{display:block;font-size:28px;font-weight:900;color:#fff}.stats span{font-size:12px;color:#fed7aa}
 
 .glass{background:rgba(41, 17, 7, 0.85);backdrop-filter:blur(16px);border:1px solid rgba(251, 146, 60, 0.25);border-radius:24px;padding:26px;box-shadow:0 20px 40px rgba(0,0,0,0.4)}
 .mon{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.12);font-weight:700;font-size:14px;color:#fef08a}
@@ -94,9 +102,16 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color
 .tag{font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;white-space:nowrap}
 .t-ok{background:rgba(16,185,129,0.2);color:#34d399}.t-bad{background:rgba(225,29,72,0.2);color:#fb7185}.t-b{background:rgba(234,88,12,0.25);color:#fb923c}.t-a{background:rgba(245,158,11,0.2);color:#fcd34d}
 
+/* Running Galaxy Marquee Ticker */
+.marquee-container{background:linear-gradient(90deg, #241b14, #33241b, #241b14);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:18px 0;white-space:nowrap;position:relative}
+.marquee-track{display:inline-flex;gap:40px;animation:scrollText 25s linear infinite}
+.marquee-item{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:#fed7aa;background:rgba(234,88,12,0.15);padding:8px 20px;border-radius:99px;border:1px solid rgba(251,146,60,0.3)}
+.marquee-item i{color:var(--accent);font-size:18px}
+@keyframes scrollText{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* Sections */
 section{padding:90px 0}
-.head{text-align:center;max-width:640px;margin:0 auto 52px}
+.head{text-align:center;max-width:680px;margin:0 auto 52px}
 .eyebrow{display:inline-block;color:var(--primary);background:var(--surface2);border:1px solid var(--border);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:12px}
 .head h2{font-size:clamp(30px,4vw,42px);font-weight:900;margin-bottom:10px}.head p{color:var(--muted)}
 
@@ -108,6 +123,25 @@ section{padding:90px 0}
 .card h3{font-size:22px;margin-bottom:8px;font-weight:800}.card p{color:var(--muted);font-size:14px;margin-bottom:16px}
 .card ul{list-style:none;padding:0;font-size:13px;font-weight:600;margin-bottom:22px;display:grid;gap:10px}
 .card li::before{content:"✓";color:var(--primary);font-weight:900;margin-right:8px}.card .btn{margin-top:auto}
+
+/* Projects Gallery Showcase Grid */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.proj-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .3s}
+.proj-card:hover{transform:translateY(-6px);border-color:var(--primary)}
+.proj-img{height:180px;background:linear-gradient(135deg,#ea580c,#e11d48);display:grid;place-items:center;color:#fff;font-size:48px;position:relative}
+.proj-body{padding:24px;display:flex;flex-direction:column;flex-grow:1}
+.proj-body h3{font-size:20px;margin-bottom:8px}
+.proj-body p{color:var(--muted);font-size:13px;margin-bottom:16px;flex-grow:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.proj-tags span{font-size:11px;font-weight:700;background:var(--surface2);color:var(--primary);padding:4px 10px;border-radius:6px}
+
+/* Tech Stack Grid */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.tech-item{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;box-shadow:var(--shadow);transition:transform .2s}
+.tech-item:hover{transform:translateY(-3px);border-color:var(--primary)}
+.tech-item i{font-size:32px;color:var(--primary);margin-bottom:10px}
+.tech-item h4{font-size:16px;font-weight:800;margin-bottom:4px}
+.tech-item p{font-size:12px;color:var(--muted)}
 
 /* Showcase Section */
 .show{background:linear-gradient(135deg, #241b14, #18120e);color:#fef3c7}
@@ -147,6 +181,20 @@ input.err,textarea.err{border-color:var(--bad);box-shadow:0 0 0 4px rgba(225,29,
 .map{min-height:300px;border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow);display:grid;place-items:center;text-align:center;padding:32px;background:linear-gradient(135deg,var(--surface2),var(--surface));position:relative;overflow:hidden}
 .map::before{content:"";position:absolute;inset:0;opacity:.5;background:linear-gradient(var(--border) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--border) 1px,transparent 1px) 0 0/40px 40px}
 .map>*{position:relative}.pin{font-size:48px;animation:bob 2s infinite ease-in-out}@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* Team Section Styles */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.team-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
+.team-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 16px;background:linear-gradient(135deg,#ea580c,#e11d48);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:900;box-shadow:0 8px 20px rgba(234,88,12,0.3)}
+.team-card h3{font-size:18px;margin-bottom:4px;text-align:center}
+.team-card p.role{color:var(--primary);font-size:13px;font-weight:700;margin-bottom:12px;text-align:center}
+.team-card p.bio{color:var(--muted);font-size:13px;margin-bottom:20px;text-align:center}
+
+/* FAQ Section */
+.faq-grid{display:grid;gap:16px;max-width:800px;margin:auto}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.faq-item h4{font-size:17px;font-weight:800;margin-bottom:8px;color:var(--primary)}
+.faq-item p{font-size:14px;color:var(--muted);margin:0}
 
 /* Reviews */
 .quote{font-style:italic;color:var(--muted);font-size:15px;margin:14px 0 20px}.stars{color:var(--accent);letter-spacing:3px;font-size:16px}
@@ -196,12 +244,12 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
 </head>
 <body>
 
-<a class="wa" href="https://wa.me/?text=Hello%20Himanshu%20ERP%20Team%2C%20I%20would%20like%20to%20inquire%20about%20a%20live%20demo." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<a class="wa" href="https://wa.me/917309490497?text=Hello%20Himanshu,%20I%20would%20like%20to%20discuss%20a%20.NET%20development%20or%20ERP%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 <div id="toasts" aria-live="polite"></div>
 
 <div class="bar">
-    <span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-fire text-amber-200"></i> <b>🔥 HIGH DEMAND:</b> Cloud ERP v4.8 with AI Stock Forecasting &amp; Multi-Plant Control is live.</span> 
-    <a href="#" data-open="demo">Book Demo →</a>
+    <span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-code text-amber-200"></i> <b>💡 AVAILABLE FOR HIRE:</b> 5+ Years Expert .NET &amp; Enterprise ERP Developer.</span> 
+    <a href="#" data-open="demo">Hire Me / Book Demo →</a>
 </div>
 
 <nav>
@@ -209,11 +257,14 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
   <a class="logo" href="#top"><span class="m">H</span><span>Himanshu<em>ERP</em></span></a>
   <div class="links" id="links">
    <a class="l" href="#solutions">Solutions</a>
-   <a class="l" href="#showcase">App Showcase</a>
+   <a class="l" href="#portfolio">Projects</a>
+   <a class="l" href="#skills">Tech Stack</a>
+   <a class="l" href="#showcase">Live UI</a>
+   <a class="l" href="#team">Team</a>
+   <a class="l" href="#faq">FAQ</a>
    <a class="l" href="#location">Headquarters</a>
-   <a class="l" href="#reviews">Reviews</a>
    <button class="icon-btn" id="theme" aria-label="Toggle dark mode">🌙</button>
-   <button class="btn sm" data-open="demo"><i class="fa-regular fa-calendar-check mr-1"></i> Book Demo</button>
+   <button class="btn sm" data-open="demo"><i class="fa-regular fa-paper-plane mr-1"></i> Send Enquiry</button>
   </div>
   <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
  </div>
@@ -222,43 +273,130 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
 <header class="hero" id="top">
  <div class="wrap grid2">
   <div>
-   <span class="pill"><i class="fa-solid fa-bolt text-amber-300"></i> Next-Gen Enterprise Suite</span>
-   <h1>Orchestrate Your Entire <span class="grad">Manufacturing Ecosystem</span></h1>
-   <p class="lead">Unify multi-site inventory, intelligent shop-floor scheduling, supply chain tracking and real-time financial reporting in one high-performance platform.</p>
+   <span class="pill"><i class="fa-solid fa-medal text-amber-300"></i> 5+ Years .NET Development Expertise</span>
+   <h1>Custom Software, ERP &amp; <span class="grad">Robust .NET Solutions</span></h1>
+   <p class="lead">B.Tech CSE Graduate specializing in C#, ASP.NET Core, MVC, Web APIs, and SQL Server. Delivering high-performance enterprise applications for Education, Healthcare, Logistics, and E-Commerce.</p>
    <div class="row">
-    <button class="btn" data-open="demo"><i class="fa-solid fa-fire text-amber-200"></i> Schedule Live Demo</button>
-    <a class="btn ghost" href="https://wa.me/?text=Hello%20Himanshu%20ERP%20Team%2C%20I%20need%20quick%20assistance." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp text-emerald-400"></i> Quick Chat</a>
+    <button class="btn" data-open="demo"><i class="fa-solid fa-paper-plane text-amber-200"></i> Discuss Your Project</button>
+    <a class="btn ghost" href="https://wa.me/917309490497?text=Hello%20Himanshu,%20I%20reviewed%20your%20portfolio." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp text-emerald-400"></i> Direct WhatsApp</a>
    </div>
    <div class="stats">
-       <div><b>99.9%</b><span>Stock Precision Rate</span></div>
-       <div><b>40%</b><span>Avg Downtime Reduction</span></div>
-       <div><b>500+</b><span>Global Enterprises</span></div>
+        <div><b>5+</b><span>Years Experience</span></div>
+        <div><b>500+</b><span>Database Schema Optimized</span></div>
+        <div><b>100%</b><span>Client Satisfaction</span></div>
    </div>
   </div>
   <div class="glass">
-   <div class="mon"><span><span class="dot"></span>Plant #1 Real-Time Monitor</span><span class="tag t-b">ONLINE</span></div>
-   <div class="mrow"><div><b>Assembly Line Alpha</b><small>Hydraulic press unit active</small></div><span class="tag t-ok">Optimal 96%</span></div>
-   <div class="mrow"><div><b>Warehouse Bay 4</b><small>Automated GRN verification</small></div><span class="tag t-b">Synced</span></div>
-   <div class="mrow"><div><b>Quality Control Audit</b><small>Batch #HIM-8821 passed</small></div><span class="tag t-a">Verified</span></div>
-   <button class="btn sm" style="width:100%;margin-top:10px" data-open="demo">Test Drive Live Environment →</button>
+   <div class="mon"><span><span class="dot"></span>Smart Education ERP</span><span class="tag t-b">DEMO READY</span></div>
+   <div class="mrow"><div><b>Academic &amp; Student Directory</b><small>Quick Search, Admissions &amp; Fees</small></div><span class="tag t-ok">Active</span></div>
+   <div class="mrow"><div><b>Secure Login System</b><small>Session management &amp; CAPTCHA</small></div><span class="tag t-b">Protected</span></div>
+   <div class="mrow"><div><b>REST API Integration</b><small>High throughput backend endpoints</small></div><span class="tag t-a">Optimized</span></div>
+   <button class="btn sm" style="width:100%;margin-top:10px" data-open="demo">Request Detailed CV &amp; Proposal →</button>
   </div>
  </div>
 </header>
 
+<!-- Running Galaxy Marquee Ticker -->
+<div class="marquee-container">
+ <div class="marquee-track">
+  <div class="marquee-item"><i class="fa-solid fa-graduation-cap"></i> Smart Education ERP</div>
+  <div class="marquee-item"><i class="fa-solid fa-industry"></i> Manufacturing MRP Suite</div>
+  <div class="marquee-item"><i class="fa-solid fa-warehouse"></i> Inventory Management</div>
+  <div class="marquee-item"><i class="fa-solid fa-code"></i> C# &amp; ASP.NET Core</div>
+  <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL Server Stored Procedures</div>
+  <div class="marquee-item"><i class="fa-solid fa-shield-halved"></i> Secure CAPTCHA Login</div>
+  <div class="marquee-item"><i class="fa-solid fa-truck-fast"></i> Logistics &amp; Supply Chain</div>
+  <!-- Repeat for infinite smooth loop -->
+  <div class="marquee-item"><i class="fa-solid fa-graduation-cap"></i> Smart Education ERP</div>
+  <div class="marquee-item"><i class="fa-solid fa-industry"></i> Manufacturing MRP Suite</div>
+  <div class="marquee-item"><i class="fa-solid fa-warehouse"></i> Inventory Management</div>
+  <div class="marquee-item"><i class="fa-solid fa-code"></i> C# &amp; ASP.NET Core</div>
+  <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL Server Stored Procedures</div>
+ </div>
+</div>
+
 <section id="solutions">
  <div class="wrap">
-  <div class="head rv"><span class="eyebrow">Enterprise Modules</span><h2>Built for Total Operational Mastery</h2><p>Engineered to solve complex discrete manufacturing and multi-warehouse supply chain bottlenecks.</p></div>
+  <div class="head rv"><span class="eyebrow">Core Expertise &amp; Services</span><h2>Professional .NET &amp; ERP Solutions</h2><p>Offering end-to-end software development, database design, API integrations, and legacy system modernization.</p></div>
   <div class="cards">
-   <div class="card rv"><div class="ico">🏭</div><h3>Production &amp; MRP II</h3><p>Multi-level BOM, automated work order scheduling, real-time WIP tracking and preventive maintenance alerts.</p><ul><li>Dynamic multi-level BOM</li><li>Subcontractor job tracking</li><li>Bottleneck detection AI</li></ul><button class="btn outline sm" data-open="demo" data-module="Manufacturing">Request Module Demo</button></div>
-   <div class="card rv"><div class="ico">📦</div><h3>Smart Warehouse</h3><p>Multi-location stock visibility, barcode &amp; QR integration, automated reorder triggers and bin-level mapping.</p><ul><li>Real-time inventory tracking</li><li>Auto-replenishment rules</li><li>Batch &amp; serial tracing</li></ul><button class="btn outline sm" data-open="demo" data-module="Warehouse">Request Module Demo</button></div>
-   <div class="card rv"><div class="ico">🧮</div><h3>Financials &amp; Costing</h3><p>Integrated ledger, automated payables/receivables, job-cost variance analysis and tax compliance reporting.</p><ul><li>Real-time job costing</li><li>Automated bank reconciliation</li><li>Multi-currency support</li></ul><button class="btn outline sm" data-open="demo" data-module="Financials">Request Module Demo</button></div>
+   <div class="card rv"><div class="ico">🎓</div><h3>Education &amp; University ERP</h3><p>Complete academic management suites covering student directories, examination schedules, fee tracking, and secure authentication.</p><ul><li>Student &amp; Staff Directory</li><li>Examination &amp; Grade Management</li><li>Secure CAPTCHA Login</li></ul><button class="btn outline sm" data-open="demo" data-module="Education ERP">Inquire Now</button></div>
+   <div class="card rv"><div class="ico">🏭</div><h3>Enterprise Manufacturing &amp; MRP</h3><p>Multi-level BOM, automated work order scheduling, real-time WIP tracking and preventive maintenance systems.</p><ul><li>Dynamic multi-level BOM</li><li>Subcontractor job tracking</li><li>Bottleneck detection</li></ul><button class="btn outline sm" data-open="demo" data-module="Manufacturing ERP">Inquire Now</button></div>
+   <div class="card rv"><div class="ico">🧮</div><h3>Custom Web App &amp; Database</h3><p>High-performance REST APIs, custom web applications, complex SQL Server stored procedures, and database optimization.</p><ul><li>C# &amp; ASP.NET Core Web API</li><li>EF Core, Dapper &amp; ADO.NET</li><li>SQL Server Query Tuning</li></ul><button class="btn outline sm" data-open="demo" data-module="Database & API">Inquire Now</button></div>
+  </div>
+ </div>
+</section>
+
+<!-- ERP Projects Gallery & Software Showcase Section -->
+<section id="portfolio" style="background:var(--surface)">
+ <div class="wrap">
+  <div class="head rv">
+   <span class="eyebrow">Featured Software Products</span>
+   <h2>Our Flagship ERP &amp; Enterprise Solutions</h2>
+   <p>Explore our robust production-ready software suites engineered for high scalability and secure operations.</p>
+  </div>
+  <div class="proj-grid">
+   
+   <!-- Project 1 -->
+   <div class="proj-card rv">
+    <div class="proj-img"><i class="fa-solid fa-graduation-cap"></i></div>
+    <div class="proj-body">
+     <h3>Smart Education ERP</h3>
+     <p>Comprehensive university management system streamlining admissions, student directory, fee collections, and examination workflows.</p>
+     <div class="proj-tags">
+      <span>ASP.NET Core</span><span>SQL Server</span><span>MVC</span><span>Secure Auth</span>
+     </div>
+     <button class="btn outline sm" style="width:100%" data-open="demo" data-module="Education ERP">Request Live Demo</button>
+    </div>
+   </div>
+
+   <!-- Project 2 -->
+   <div class="proj-card rv">
+    <div class="proj-img" style="background:linear-gradient(135deg,#059669,#10b981)"><i class="fa-solid fa-boxes-stacked"></i></div>
+    <div class="proj-body">
+     <h3>ERP Inventory &amp; Supply Chain</h3>
+     <p>Real-time multi-warehouse inventory control, barcode/QR tracking, automated stock alerts, and seamless GRN verification.</p>
+     <div class="proj-tags">
+      <span>C# REST API</span><span>Entity Framework</span><span>jQuery</span><span>AJAX</span>
+     </div>
+     <button class="btn outline sm" style="width:100%" data-open="demo" data-module="Inventory System">Request Live Demo</button>
+    </div>
+   </div>
+
+   <!-- Project 3 -->
+   <div class="proj-card rv">
+    <div class="proj-img" style="background:linear-gradient(135deg,#f59e0b,#ea580c)"><i class="fa-solid fa-hospital-user"></i></div>
+    <div class="proj-body">
+     <h3>Healthcare &amp; Logistics Suite</h3>
+     <p>Specialized enterprise systems for patient record management, multi-location fleet tracking, and automated dispatch operations.</p>
+     <div class="proj-tags">
+      <span>ASP.NET MVC</span><span>SQL Server 2019</span><span>Bootstrap</span><span>RDLC Reports</span>
+     </div>
+     <button class="btn outline sm" style="width:100%" data-open="demo" data-module="Healthcare & Logistics">Request Live Demo</button>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- Tech Stack & Skills Section -->
+<section id="skills">
+ <div class="wrap">
+  <div class="head rv"><span class="eyebrow">Technical Competencies</span><h2>Core Tech Stack &amp; Skills</h2><p>Leveraging industry-standard technologies to build scalable, secure, and maintainable enterprise software.</p></div>
+  <div class="tech-grid">
+   <div class="tech-item rv"><i class="fa-solid fa-code"></i><h4>C# &amp; .NET</h4><p>ASP.NET Core, MVC, Web Forms, Web APIs</p></div>
+   <div class="tech-item rv"><i class="fa-solid fa-database"></i><h4>SQL Server</h4><p>T-SQL, Stored Procedures, EF Core, Dapper</p></div>
+   <div class="tech-item rv"><i class="fa-solid fa-server"></i><h4>Data Access</h4><p>ADO.NET, LINQ, Database Architecture</p></div>
+   <div class="tech-item rv"><i class="fa-solid fa-globe"></i><h4>Frontend &amp; UI</h4><p>JavaScript, jQuery, AJAX, HTML5, CSS3, Bootstrap</p></div>
+   <div class="tech-item rv"><i class="fa-solid fa-shield-halved"></i><h4>Enterprise Security</h4><p>Authentication, Role-Based Access, CAPTCHA</p></div>
+   <div class="tech-item rv"><i class="fa-solid fa-gears"></i><h4>Integrations</h4><p>RESTful Web Services, Third-party APIs</p></div>
   </div>
  </div>
 </section>
 
 <section class="show" id="showcase">
  <div class="wrap">
-  <div class="head rv"><span class="eyebrow">Interactive Demo Showcase</span><h2>Test Drive Application Modules</h2><p>Try our responsive enterprise UI components.</p></div>
+  <div class="head rv"><span class="eyebrow">Interactive Portfolio &amp; Modules</span><h2>Test Drive Enterprise UI Components</h2><p>Interact with responsive modules built for modern businesses.</p></div>
   <div class="tabs" role="tablist">
    <button class="tab active" data-view="v1" role="tab">📦 Inventory Control</button>
    <button class="tab" data-view="v2" role="tab">⏱ Work Order Schedule</button>
@@ -298,24 +436,112 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
  </div>
 </section>
 
-<!-- Location Section updated to Mangal Pandey Park, Azad Nagar, Lucknow -->
-<section id="location">
+<!-- Team & Key Contributors Section -->
+<section id="team" style="background:var(--surface)">
  <div class="wrap">
-  <div class="head rv"><span class="eyebrow">Global Headquarters</span><h2>Visit Our Corporate Offices</h2><p>Schedule an on-site consultation or technical demonstration with our engineering team.</p></div>
+  <div class="head rv">
+   <span class="eyebrow">Professional Leadership & Team</span>
+   <h2>Meet Our Expert Core Team</h2>
+   <p>Dedicated professionals delivering clean architecture, robust testing, and reliable enterprise solutions.</p>
+  </div>
+  
+  <div class="team-grid">
+   
+   <!-- Team Member 1: Himanshu Raaj -->
+   <div class="team-card rv">
+    <div>
+     <div class="team-avatar">HR</div>
+     <h3>Himanshu Raaj</h3>
+     <p class="role">Lead .NET Developer &amp; ERP Architect</p>
+     <p class="bio">B.Tech (Computer Science) graduate with 5+ years of professional experience in C#, ASP.NET Core, Web APIs, and SQL Server database engineering.</p>
+    </div>
+    <div style="display: flex; gap: 8px; justify-content: center; width: 100%; margin-top: 20px;">
+     <a class="btn outline sm" href="https://www.linkedin.com/in/himanshu-576158218/" target="_blank" rel="noopener" style="flex: 1; padding: 10px 12px; font-size: 13px; white-space: nowrap;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+     <a class="btn sm" data-open="demo" data-module="General Consultation" style="flex: 1; padding: 10px 12px; font-size: 13px; white-space: nowrap;"><i class="fa-regular fa-calendar-check"></i> Book Call</a>
+    </div>
+   </div>
+
+   <!-- Team Member 2: Chandni Raaj -->
+   <div class="team-card rv">
+    <div>
+     <div class="team-avatar" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">CR</div>
+     <h3>Chandni Raaj</h3>
+     <p class="role">QA Lead &amp; Quality Assurance</p>
+     <p class="bio">Ensures bug-free delivery, rigorous software testing, quality compliance, and optimal performance across all enterprise modules.</p>
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+     <a class="btn outline sm" href="https://wa.me/917309490497" target="_blank" rel="noopener" style="width: 100%; padding: 10px;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Contact</a>
+    </div>
+   </div>
+
+   <!-- Team Member 3: Abhimanyu Yadav -->
+   <div class="team-card rv">
+    <div>
+     <div class="team-avatar" style="background:linear-gradient(135deg,#059669,#10b981)">AY</div>
+     <h3>Abhimanyu Yadav</h3>
+     <p class="role">Senior Client Manager &amp; Demo Specialist</p>
+     <p class="bio">Handles client relationships, technical software testing, onboarding, and conducts live product demonstrations for enterprises.</p>
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+     <a class="btn outline sm" href="https://wa.me/917309490497" target="_blank" rel="noopener" style="width: 100%; padding: 10px;"><i class="fa-brands fa-whatsapp"></i> Connect on WhatsApp</a>
+    </div>
+   </div>
+
+   <!-- Team Member 4: Manish Kumar -->
+   <div class="team-card rv">
+    <div>
+     <div class="team-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706)">MK</div>
+     <h3>Manish Kumar</h3>
+     <p class="role">Full Stack Developer &amp; Requirements Analyst</p>
+     <p class="bio">Specializes in gathering complex client business requirements, system analysis, and building end-to-end full-stack features.</p>
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%; margin-top: 20px;">
+     <a class="btn outline sm" href="https://wa.me/917309490497" target="_blank" rel="noopener" style="width: 100%; padding: 10px;"><i class="fa-brands fa-whatsapp"></i> Connect on WhatsApp</a>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- FAQ Section for Client Trust -->
+<section id="faq">
+ <div class="wrap">
+  <div class="head rv"><span class="eyebrow">Frequently Asked Questions</span><h2>Got Questions? We've Got Answers.</h2><p>Everything you need to know about partnering with us for your enterprise software needs.</p></div>
+  <div class="faq-grid rv">
+   <div class="faq-item">
+    <h4>What technologies do you specialize in?</h4>
+    <p>We specialize in .NET stack including C#, ASP.NET Core, MVC, Web APIs, SQL Server, Entity Framework Core, Dapper, JavaScript, jQuery, and Bootstrap.</p>
+   </div>
+   <div class="faq-item">
+    <h4>Can you customize existing ERP systems or build from scratch?</h4>
+    <p>Yes, we do both! Whether you need new modules added to your existing legacy software or a complete custom ERP built from the ground up, we handle it seamlessly.</p></div>
+   <div class="faq-item">
+    <h4>How do we get started with a project?</h4>
+    <p>Simply click on "Send Enquiry" or message us directly on WhatsApp. We will discuss your requirements, propose the architecture, and provide a transparent timeline and estimate.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Location Section -->
+<section id="location" style="background:var(--surface)">
+ <div class="wrap">
+  <div class="head rv"><span class="eyebrow">Global Headquarters</span><h2>Visit Our Offices</h2><p>Schedule an on-site consultation or technical demonstration in the Greater Lucknow Area.</p></div>
   <div class="loc">
    <div style="display:grid;gap:20px">
     <div class="card rv">
         <div class="ico">🏢</div>
-        <h3>Himanshu ERP Solutions</h3>
+        <h3>Himanshu ERP &amp; Software Solutions</h3>
         <p>Mangal Pandey Park, Azad Nagar (Nagar Nigam)<br>Lucknow, Uttar Pradesh, India</p>
         <div style="font-size:13px;font-weight:600;display:grid;gap:6px;margin-top:10px">
-            <span>📞 +91 7309490497-HIMANSHU</span>
-            <span>✉️ himanshu@erp.com</span>
+            <span>📞 <a href="tel:+917309490497">+91 7309490497</a></span>
+            <span>✉️ <a href="mailto:himanshu@erp.com">himanshu@erp.com</a></span>
         </div>
     </div>
     <div class="card rv" style="flex-direction:row;align-items:center;justify-content:space-between;gap:12px">
         <div><h3 style="font-size:16px">Instant WhatsApp Assistance</h3><p style="margin:0">Average reply time: under 5 minutes</p></div>
-        <a class="btn ok sm" href="https://wa.me/?text=Hello%20Himanshu%20ERP%20Team" target="_blank" rel="noopener">Open Chat</a>
+        <a class="btn ok sm" href="https://wa.me/917309490497" target="_blank" rel="noopener">Open Chat</a>
     </div>
    </div>
    <div class="map rv">
@@ -330,20 +556,30 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
  </div>
 </section>
 
-<section id="reviews" style="background:var(--surface)">
+<!-- Reviews & Google Sheets Integrated Form Section -->
+<section id="reviews">
  <div class="wrap">
-  <div class="head rv"><span class="eyebrow">Client Testimonials</span><h2>Trusted by Industry Leaders</h2><p>Read reviews from enterprise directors, or share your own feedback.</p></div>
+  <div class="head rv"><span class="eyebrow">Client Testimonials</span><h2>Trusted by Industry Leaders</h2><p>Read reviews from directors, or share your feedback directly.</p></div>
   <div class="cards" id="reviewList">
-   <div class="card rv"><div class="stars">★★★★★</div><p class="quote">"Himanshu ERP transformed our shop floor visibility. Material tracking and dispatch times improved by 40% within two months."</p><div class="who"><div class="av">RK</div><div><b>Rajesh Kumar</b><small>Operations Director, Apex Industries</small></div></div></div>
-   <div class="card rv"><div class="stars">★★★★★</div><p class="quote">"The multi-warehouse inventory module is foolproof. Automated replenishment stopped our production delays completely."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">AS</div><div><b>Ananya Sharma</b><small>Supply Chain Head, Nova Manufacturing</small></div></div></div>
-   <div class="card rv"><div class="stars">★★★★☆</div><p class="quote">"Clean interface, powerful reporting engine and excellent support during database migration. Highly recommended."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#059669,#10b981)">VG</div><div><b>Vikram Gupta</b><small>Managing Director, Trident Auto Components</small></div></div></div>
+   <div class="card rv"><div class="stars">★★★★★</div><p class="quote">"Himanshu's expertise in .NET and database architecture transformed our university ERP performance. Highly skilled and reliable."</p><div class="who"><div class="av">RK</div><div><b>Rajesh Kumar</b><small>Operations Director, Apex Industries</small></div></div></div>
+   <div class="card rv"><div class="stars">★★★★★</div><p class="quote">"Clean interface, robust REST APIs and flawless SQL Server integration. Exceptional software developer!"</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">AS</div><div><b>Ananya Sharma</b><small>Supply Chain Head, Nova Manufacturing</small></div></div></div>
+   <div class="card rv"><div class="stars">★★★★☆</div><p class="quote">"Professional communication and deep knowledge of C# and enterprise applications. Look forward to future projects."</p><div class="who"><div class="av" style="background:linear-gradient(135deg,#059669,#10b981)">VG</div><div><b>Vikram Gupta</b><small>Managing Director, Trident Auto</small></div></div></div>
   </div>
-  <form class="form rv" id="rf" novalidate>
-   <h3>Submit Your Review</h3><p>Your feedback is saved in this browser.</p>
-   <div class="fg"><div><label for="rn">Your Name</label><input id="rn" placeholder="Full name"><div class="ferr"></div></div><div><label for="rc">Company &amp; Designation</label><input id="rc" placeholder="e.g. CTO, Vertex Corp"><div class="ferr"></div></div></div>
-   <div class="fg"><div><label for="rr">Rating</label><select id="rr"><option value="5">★★★★★ Outstanding</option><option value="4">★★★★ Very Good</option><option value="3">★★★ Average</option></select></div><div><label for="rm">Module Evaluated</label><select id="rm"><option>Manufacturing</option><option>Warehouse</option><option>Financials</option></select></div></div>
-   <div style="margin-bottom:18px"><label for="rt">Review Comments</label><textarea id="rt" rows="3" placeholder="Write your experience..."></textarea><div class="ferr"></div></div>
-   <button class="btn" style="width:100%" type="submit"><i class="fa-solid fa-paper-plane mr-2"></i> Submit Review</button>
+  
+  <!-- Review / Contact Form connected to Google Sheet -->
+  <form class="form rv" id="leadForm" novalidate>
+   <h3>Send an Enquiry / Review</h3><p>Submissions save directly to your secure Google Sheet database.</p>
+   <div class="fg">
+     <div><label for="name">Your Name</label><input id="name" name="name" placeholder="Full name" required><div class="ferr"></div></div>
+     <div><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="john@company.com" required><div class="ferr"></div></div>
+   </div>
+   <div style="margin-bottom:18px">
+     <label for="message">Message / Enquiry Details</label>
+     <textarea id="message" name="message" rows="3" placeholder="Write your project requirements or feedback..." required></textarea>
+     <div class="ferr"></div>
+   </div>
+   <button class="btn" style="width:100%" type="submit" id="submitBtn"><i class="fa-solid fa-paper-plane mr-2"></i> Submit Enquiry</button>
+   <p id="formStatus" role="status" style="text-align:center;margin-top:12px;font-size:14px;font-weight:600;color:var(--accent);"></p>
   </form>
  </div>
 </section>
@@ -351,23 +587,23 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
 <footer>
  <div class="wrap">
   <div class="fgrid">
-   <div><a class="logo" href="#top" style="color:#fff;margin-bottom:14px"><span class="m">H</span><span>Himanshu<em>ERP</em></span></a><p style="font-size:14px">Cloud ERP engineered for discrete manufacturing, multi-site warehousing and enterprise scale.</p></div>
-   <div><h5>Solutions</h5><ul><li><a href="#solutions">Manufacturing &amp; MRP</a></li><li><a href="#solutions">Warehouse Systems</a></li><li><a href="#solutions">Financial Accounting</a></li></ul></div>
-   <div><h5>Company</h5><ul><li><a href="#location">Headquarters</a></li><li><a href="#reviews">Client Reviews</a></li><li><a href="https://wa.me/?text=Hello" target="_blank" rel="noopener" style="color:#22c55e;font-weight:600"><i class="fa-brands fa-whatsapp"></i> WhatsApp Support</a></li></ul></div>
-   <div><h5>Newsletter</h5><p style="font-size:14px;margin-bottom:10px">Quarterly updates on manufacturing cloud tech.</p><form class="nl" id="nl" novalidate><input type="email" id="ne" placeholder="Corporate email" aria-label="Email"><button class="btn sm" type="submit">Join</button></form></div>
+   <div><a class="logo" href="#top" style="color:#fff;margin-bottom:14px"><span class="m">H</span><span>Himanshu<em>ERP</em></span></a><p style="font-size:14px">Enterprise .NET Development, Custom Software &amp; ERP Solutions by Himanshu Raaj.</p></div>
+   <div><h5>Solutions</h5><ul><li><a href="#solutions">Education &amp; University ERP</a></li><li><a href="#solutions">Manufacturing &amp; MRP</a></li><li><a href="#solutions">Database &amp; APIs</a></li></ul></div>
+   <div><h5>Company</h5><ul><li><a href="#team">Lead Developer</a></li><li><a href="#faq">FAQ</a></li><li><a href="#location">Headquarters</a></li><li><a href="https://wa.me/917309490497" target="_blank" rel="noopener" style="color:#22c55e;font-weight:600"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a></li></ul></div>
+   <div><h5>Newsletter</h5><p style="font-size:14px;margin-bottom:10px">Updates on .NET and enterprise cloud tech.</p><form class="nl" id="nl" novalidate><input type="email" id="ne" placeholder="Corporate email" aria-label="Email"><button class="btn sm" type="submit">Join</button></form></div>
   </div>
-  <div class="copy"><span>© 2026 Himanshu ERP Systems Inc. All rights reserved.</span><span>Architecture ready for ASP.NET Core &amp; SQL Server</span></div>
+  <div class="copy"><span>© 2026 Himanshu Raaj. All rights reserved.</span><span>Architecture ready for ASP.NET Core &amp; SQL Server</span></div>
  </div>
 </footer>
 
 <div class="ov" id="demo" aria-hidden="true">
  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dt">
-  <div class="mh"><span id="dt">📅 Book Demo Appointment</span><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="mh"><span id="dt">📅 Book Demo / Schedule Discussion</span><button class="x" data-close aria-label="Close">×</button></div>
   <form id="df" novalidate>
    <div style="margin-bottom:14px"><label for="dn">Full Name</label><input id="dn" placeholder="e.g. John Doe"><div class="ferr"></div></div>
-   <div class="fg"><div><label for="de">Work Email</label><input id="de" type="email" placeholder="john@company.com"><div class="ferr"></div></div><div><label for="dp">Phone</label><input id="dp" type="tel" placeholder="+1 555 000 0000"><div class="ferr"></div></div></div>
+   <div class="fg"><div><label for="de">Work Email</label><input id="de" type="email" placeholder="john@company.com"><div class="ferr"></div></div><div><label for="dp">Phone</label><input id="dp" type="tel" placeholder="+91 98765 43210"><div class="ferr"></div></div></div>
    <div class="fg"><div><label for="dd">Preferred Date</label><input id="dd" type="date"><div class="ferr"></div></div><div><label for="dtm">Time Slot</label><select id="dtm"><option>10:00 AM</option><option>02:00 PM</option><option>04:30 PM</option></select></div></div>
-   <div style="margin-bottom:20px"><label for="dm">Module of Interest</label><select id="dm"><option value="All Modules">Complete Enterprise Suite</option><option>Manufacturing</option><option>Warehouse</option><option>Financials</option></select></div>
+   <div style="margin-bottom:20px"><label for="dm">Module of Interest</label><select id="dm"><option value="Complete Suite">Complete Enterprise Suite</option><option>Education ERP</option><option>Manufacturing</option><option>Database & API</option></select></div>
    <button class="btn" style="width:100%" type="submit" id="dsub">Confirm Appointment</button>
   </form>
  </div>
@@ -389,8 +625,8 @@ th.onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
 
 const bg=$('#burger'),lk=$('#links');
 bg.onclick=()=>{const o=lk.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
-$$('#links a').forEach(a=>a.addEventListener('click',()=>{lk.classList.remove('open');bg.setAttribute('aria-expanded',false)}));  const secs=$$
-('section[id]'),navA=$$('.links a.l'); const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45\% 0px -50\% 0px'}); secs.forEach(s=>spy.observe(s)); const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12}); const rv=()=>$$('.rv:not(.in)').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});rv();
+$$('#links a').forEach(a=>a.addEventListener('click',()=>{lk.classList.remove('open');bg.setAttribute('aria-expanded',false)})); const secs=$$
+('section[id]'),navA=$$('.links a.l'); const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45\% 0px -50\% 0px'}); secs.forEach(s=>spy.observe(s));  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12}); const rv=()=>$$('.rv:not(.in)').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});rv();
 
 let lastFocus;
 function openM(m,mod){lastFocus=document.activeElement;if(mod)$('#dm').value=mod;m.classList.add('show');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>$('input',m).focus(),250)}
@@ -404,37 +640,121 @@ function bad(el,msg){el.classList.add('err');const f=el.parentElement.querySelec
 function clr(f){$$('.err',f).forEach(x=>x.classList.remove('err'));$$('.ferr',f).forEach(x=>x.textContent='')}
 const mail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);$$('input,textarea').forEach(i=>i.addEventListener('input',()=>{i.classList.remove('err');const f=i.parentElement.querySelector('.ferr');if(f)f.textContent=''}));
 
-$('#df').addEventListener('submit',e=>{e.preventDefault();const f=e.target;clr(f);let ok=true;
- if($('#dn').value.trim().length<2)ok=bad($('#dn'),'Please enter your name');
- if(!mail($('#de').value.trim()))ok=bad($('#de'),'Enter a valid email');
- if($('#dp').value.replace(/\D/g,'').length<7)ok=bad($('#dp'),'Enter a valid phone');
- if(!dd.value)ok=bad(dd,'Pick a date');
- if(!ok)return toast('Please fix the highlighted fields','error');
- const b=$('#dsub');b.disabled=true;b.textContent='Booking…';
- setTimeout(()=>{store.add('erpAppointments',{name:$('#dn').value.trim(),email:$('#de').value.trim(),phone:$('#dp').value.trim(),date:dd.value,slot:$('#dtm').value,module:$('#dm').value,at:new Date().toISOString()});
-  b.disabled=false;b.textContent='Confirm Appointment';f.reset();closeM($('#demo'));toast('Appointment booked! We will email a confirmation.','success')},900)});
+// Shared Google Sheets Script URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxS8i_EQj_ID9ZnWHlo-D2qSVNz_eN2l557fnD-noqM9_LJGm9ye7IcplxMJzBx8xWY/exec';
+
+// 1. Book Demo / Appointment Form Integration to Google Sheets
+const demoForm = document.getElementById('df');
+demoForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  clr(demoForm);
+
+  let ok = true;
+  if($('#dn').value.trim().length<2) ok=bad($('#dn'),'Please enter your name');
+  if(!mail($('#de').value.trim())) ok=bad($('#de'),'Enter a valid email');
+  if($('#dp').value.replace(/\D/g,'').length<7) ok=bad($('#dp'),'Enter a valid phone');
+  if(!dd.value) ok=bad(dd,'Pick a date');
+  if(!ok) return toast('Please fix the highlighted fields','error');
+
+  const b = $('#dsub');
+  b.disabled = true;
+  b.textContent = 'Booking…';
+
+  const appointmentData = {
+    type: 'appointment',
+    name: $('#dn').value.trim(),
+    email: $('#de').value.trim(),
+    phone: $('#dp').value.trim(),
+    date: dd.value + ' (' + $('#dtm').value + ')',
+    message: 'Module: ' + $('#dm').value
+  };
+
+  fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(appointmentData)
+  })
+  .then(() => {
+    store.add('erpAppointments', appointmentData);
+    b.disabled = false;
+    b.textContent = 'Confirm Appointment';
+    demoForm.reset();
+    closeM($('#demo'));
+    toast('Appointment booked & saved successfully!','success');
+  })
+  .catch(error => {
+    console.error('Error!', error);
+    b.disabled = false;
+    b.textContent = 'Confirm Appointment';
+    toast('Booking failed. Please try again.', 'error');
+  });
+});
 
 $$('.tab').forEach(t=>t.addEventListener('click',()=>{$$
 ('.tab').forEach(x=>x.classList.toggle('active',x===t));$$('.view').forEach(v=>v.classList.toggle('active',v.id===t.dataset.view));animBars()})); function animBars(){$$('.prog i').forEach(i=>{i.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>i.style.width=i.dataset.w+'%'))})}
 
 function calc(){const v=+$('#vol').value;$('#volV').textContent=v.toLocaleString()+' Units';$('#cost').textContent='$'+Math.round(v*28*$('#cx').value).toLocaleString()}
-$('#vol').oninput=calc;$('#cx').onchange=calc;calc();  $$('.act').forEach(b=>b.addEventListener('click',()=>{const it=b.dataset.item;if(b.dataset.kind==='reorder'){b.disabled=true;b.textContent='Queued ✓';b.style.background='var(--ok)';toast('Auto-reorder initiated for '+it,'success')}else toast('Inspection report opened for '+it,'info')}));
+$('#vol').oninput=calc;$('#cx').onchange=calc;calc(); $$('.act').forEach(b=>b.addEventListener('click',()=>{const it=b.dataset.item;if(b.dataset.kind==='reorder'){b.disabled=true;b.textContent='Queued ✓';b.style.background='var(--ok)';toast('Auto-reorder initiated for '+it,'success')}else toast('Inspection report opened for '+it,'info')}));
 $('#sync').onclick=function(){const b=this;b.disabled=true;b.textContent='Syncing…';setTimeout(()=>{b.disabled=false;b.innerHTML='<i>🔄</i> Sync Stock';toast('Stock synced successfully','success')},1100)};
 
 let wn=993;$('#addWo').onclick=()=>{const d=document.createElement('div'),p=Math.floor(Math.random()*60)+10;d.className='card';d.style.cssText='background:#241b14;border-color:#573822;color:#fef3c7;padding:20px;animation:fadeUp .4s';d.innerHTML=`<small style="color:#fb923c;font-weight:800;font-size:11px;text-transform:uppercase">New · Line 0${(wn%3)+1}</small><h4 style="color:#fff;margin:6px 0">Batch #B-${wn++}</h4><span style="font-size:12px;color:#d1d5db">${p}% completed</span><div class="prog"><i style="width:${p}%;background:#ea580c"></i></div>`;$('#woList').appendChild(d);toast('Work order created','success')};
 animBars();
 
-function card(r,fresh){const i=r.name.split(/\s+/).map(n=>n[0]).join('').slice(0,2).toUpperCase();return `<div class="card ${fresh?'new':''}"><div class="stars">${'★'.repeat(r.rating)+'☆'.repeat(5-r.rating)}</div><p class="quote">"${esc(r.text)}"</p><div class="who"><div class="av">${esc(i)}</div><div><b>${esc(r.name)}</b><small>${esc(r.company)} (${esc(r.module)})</small></div></div></div>`}
-store.get('erpReviews').forEach(r=>$('#reviewList').insertAdjacentHTML('afterbegin',card(r,false)));
-$('#rf').addEventListener('submit',e=>{e.preventDefault();const f=e.target;clr(f);let ok=true;
- if($('#rn').value.trim().length<2)ok=bad($('#rn'),'Enter your name');
- if($('#rc').value.trim().length<2)ok=bad($('#rc'),'Enter company & role');
- if($('#rt').value.trim().length<10)ok=bad($('#rt'),'Please write at least 10 characters');
- if(!ok)return toast('Please complete the form','error');
- const r={name:$('#rn').value.trim(),company:$('#rc').value.trim(),rating:+$('#rr').value,module:$('#rm').value,text:$('#rt').value.trim()};
- store.add('erpReviews',r);$('#reviewList').insertAdjacentHTML('afterbegin',card(r,true));f.reset();toast('Thank you! Your review was saved.','success')});
+// 2. Main Enquiry & Review Form Integration Script
+const leadForm = document.getElementById('leadForm');
+const formStatus = document.getElementById('formStatus');
 
-$('#nl').addEventListener('submit',e=>{e.preventDefault();const i=$('#ne');if(!mail(i.value.trim()))return toast('Please enter a valid email','warn');i.value='';toast('Subscribed to the newsletter','success')});
+leadForm.addEventListener('submit', e => {
+  e.preventDefault();
+  clr(leadForm);
+  
+  let isValid = true;
+  const nameVal = document.getElementById('name').value.trim();
+  const emailVal = document.getElementById('email').value.trim();
+  const msgVal = document.getElementById('message').value.trim();
+
+  if (nameVal.length < 2) isValid = bad(document.getElementById('name'), 'Please enter your name');
+  if (!mail(emailVal)) isValid = bad(document.getElementById('email'), 'Enter a valid email address');
+  if (msgVal.length < 5) isValid = bad(document.getElementById('message'), 'Message must be at least 5 characters');
+  
+  if (!isValid) return toast('Please check form fields', 'error');
+
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+  formStatus.textContent = '';
+
+  const formData = {
+    type: 'enquiry',
+    name: nameVal,
+    email: emailVal,
+    message: msgVal
+  };
+
+  fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(() => {
+    formStatus.textContent = 'Thank you! Your message has been saved successfully.';
+    toast('Enquiry submitted successfully!', 'success');
+    leadForm.reset();
+  })
+  .catch(error => {
+    console.error('Error!', error.message);
+    formStatus.textContent = 'Something went wrong. Please try again.';
+    toast('Submission failed', 'error');
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Enquiry';
+  });
+});
+
+$('#nl').addEventListener('submit',e=>{e.preventDefault();const i=$('#ne');if(!mail(i.value.trim()))return toast('Please enter a valid email','warn');i.value='';toast('Subscribed to newsletter successfully','success')});
 })();
 </script>
 </body>
