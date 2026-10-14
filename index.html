@@ -712,11 +712,13 @@ leadForm.addEventListener('submit', e => {
   const nameVal = document.getElementById('name').value.trim();
   const emailVal = document.getElementById('email').value.trim();
   const phoneVal = document.getElementById('phone').value.trim();
+  const subjectVal = document.getElementById('subject').value.trim();
   const msgVal = document.getElementById('message').value.trim();
 
   if (nameVal.length < 2) isValid = bad(document.getElementById('name'), 'Please enter your name');
   if (!mail(emailVal)) isValid = bad(document.getElementById('email'), 'Enter a valid email address');
   if (phoneVal.replace(/\D/g,'').length < 7) isValid = bad(document.getElementById('phone'), 'Enter a valid phone number');
+  if (subjectVal.length < 2) isValid = bad(document.getElementById('subject'), 'Please enter a subject');
   if (msgVal.length < 5) isValid = bad(document.getElementById('message'), 'Message must be at least 5 characters');
   
   if (!isValid) return toast('Please check form fields', 'error');
@@ -731,6 +733,7 @@ leadForm.addEventListener('submit', e => {
     name: nameVal,
     email: emailVal,
     phone: phoneVal,
+    subject: subjectVal,
     message: msgVal
   };
 
@@ -755,7 +758,6 @@ leadForm.addEventListener('submit', e => {
     submitBtn.textContent = 'Submit Enquiry';
   });
 });
-
 $('#nl').addEventListener('submit',e=>{e.preventDefault();const i=$('#ne');if(!mail(i.value.trim()))return toast('Please enter a valid email','warn');i.value='';toast('Subscribed to newsletter successfully','success')});
 })();
 </script>
