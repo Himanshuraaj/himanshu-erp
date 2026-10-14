@@ -396,42 +396,88 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
 
 <section class="show" id="showcase">
  <div class="wrap">
-  <div class="head rv"><span class="eyebrow">Interactive Portfolio &amp; Modules</span><h2>Test Drive Enterprise UI Components</h2><p>Interact with responsive modules built for modern businesses.</p></div>
-  <div class="tabs" role="tablist">
-   <button class="tab active" data-view="v1" role="tab">📦 Inventory Control</button>
-   <button class="tab" data-view="v2" role="tab">⏱ Work Order Schedule</button>
-   <button class="tab" data-view="v3" role="tab">🧮 Cost Estimator</button>
+  <div class="head rv">
+   <span class="eyebrow">Live Features Preview</span>
+   <h2>Aapke Business ke Liye Simple &amp; Easy Tools</h2>
+   <p>Dekhiye kaise hamare software aapke stock, daily work aur cost ko asani se manage karte hain.</p>
   </div>
+  
+  <div class="tabs" role="tablist">
+   <button class="tab active" data-view="v1" role="tab">📦 Stock / Inventory</button>
+   <button class="tab" data-view="v2" role="tab">⏱ Daily Work Plan</button>
+   <button class="tab" data-view="v3" role="tab">🧮 Cost Calculator</button>
+  </div>
+
   <div class="panel">
+   
+   <!-- Feature 1: Stock Management -->
    <div class="view active" id="v1">
-    <div class="ph"><div><h3>Central Warehouse Stock Control</h3><p>Multi-facility inventory telemetry</p></div><button class="btn sm" id="sync"><i>🔄</i> Sync Stock</button></div>
-    <div class="scroll"><table><thead><tr><th>Item Code</th><th>Material</th><th>Stock</th><th>Status</th><th style="text-align:right">Action</th></tr></thead><tbody>
-     <tr><td class="code">RM-5012</td><td>Cold Rolled Steel Sheets (Grade A)</td><td>1,420 Units</td><td><span class="tag t-ok">Adequate</span></td><td style="text-align:right"><button class="btn ghost sm act" data-item="RM-5012" data-kind="inspect">Inspect</button></td></tr>
-     <tr><td class="code">RM-8834</td><td>High-Tensile Fasteners &amp; Bolts</td><td>140 Units</td><td><span class="tag t-bad">Refill Needed</span></td><td style="text-align:right"><button class="btn sm act" style="background:var(--bad)" data-item="RM-8834" data-kind="reorder">Auto-Reorder</button></td></tr>
-     <tr><td class="code">SF-2201</td><td>Machined Aluminum Housings</td><td>890 Units</td><td><span class="tag t-ok">Adequate</span></td><td style="text-align:right"><button class="btn ghost sm act" data-item="SF-2201" data-kind="inspect">Inspect</button></td></tr>
-    </tbody></table></div>
-   </div>
-   <div class="view" id="v2">
-    <div class="ph"><div><h3>Shop Floor Workstation Scheduling</h3><p>Real-time production line utilization</p></div><button class="btn sm ok" id="addWo"><i>＋</i> New Work Order</button></div>
-    <div class="wo" id="woList">
-     <div><small>Line 01 · Assembly</small><h4>Batch #B-991</h4><span style="font-size:12px;color:#d1d5db">78% completed</span><div class="prog"><i data-w="78" style="background:#ea580c"></i></div></div>
-     <div><small>Line 02 · Welding</small><h4>Batch #B-992</h4><span style="font-size:12px;color:#d1d5db">45% completed</span><div class="prog"><i data-w="45" style="background:#f59e0b"></i></div></div>
-     <div><small>Line 03 · Testing</small><h4>Batch #B-988</h4><span style="font-size:12px;color:#d1d5db">95% completed</span><div class="prog"><i data-w="95" style="background:#10b981"></i></div></div>
+    <div class="ph">
+     <div>
+      <h3>Stock &amp; Material Management</h3>
+      <p>Dekhiye kiske paas kitna stock bacha hai aur kab naya saman mangwana hai.</p>
+     </div>
+     <button class="btn sm" id="sync"><i>🔄</i> Refresh Stock</button>
+    </div>
+    <div class="scroll">
+     <table>
+      <thead>
+       <tr><th>Item Code</th><th>Item Name</th><th>Available Stock</th><th>Status</th><th style="text-align:right">Action</th></tr>
+      </thead>
+      <tbody>
+       <tr><td class="code">ITM-101</td><td>Steel Sheets (Grade A)</td><td>1,420 Units</td><td><span class="tag t-ok">Available</span></td><td style="text-align:right"><button class="btn ghost sm act" data-item="ITM-101" data-kind="inspect">View</button></td></tr>
+       <tr><td class="code">ITM-102</td><td>Industrial Bolts &amp; Nuts</td><td>140 Units</td><td><span class="tag t-bad">Low Stock</span></td><td style="text-align:right"><button class="btn sm act" style="background:var(--bad)" data-item="ITM-102" data-kind="reorder">Reorder</button></td></tr>
+       <tr><td class="code">ITM-103</td><td>Aluminum Housings</td><td>890 Units</td><td><span class="tag t-ok">Available</span></td><td style="text-align:right"><button class="btn ghost sm act" data-item="ITM-103" data-kind="inspect">View</button></td></tr>
+      </tbody>
+     </table>
     </div>
    </div>
+
+   <!-- Feature 2: Daily Work Plan -->
+   <div class="view" id="v2">
+    <div class="ph">
+     <div>
+      <h3>Daily Work / Production Progress</h3>
+      <p>Check karein ki kaunsa kaam kitna complete ho chuka hai.</p>
+     </div>
+     <button class="btn sm ok" id="addWo"><i>＋</i> Add New Task</button>
+    </div>
+    <div class="wo" id="woList">
+     <div><small>Section 1 · Assembly</small><h4>Batch #101</h4><span style="font-size:12px;color:#d1d5db">78% completed</span><div class="prog"><i data-w="78" style="background:#ea580c"></i></div></div>
+     <div><small>Section 2 · Packaging</small><h4>Batch #102</h4><span style="font-size:12px;color:#d1d5db">45% completed</span><div class="prog"><i data-w="45" style="background:#f59e0b"></i></div></div>
+     <div><small>Section 3 · Final Check</small><h4>Batch #103</h4><span style="font-size:12px;color:#d1d5db">95% completed</span><div class="prog"><i data-w="95" style="background:#10b981"></i></div></div>
+    </div>
+   </div>
+
+   <!-- Feature 3: Cost Calculator -->
    <div class="view" id="v3">
-    <div class="ph"><div><h3>Dynamic Production Cost Simulator</h3><p>Calculate projected manufacturing overheads</p></div></div>
+    <div class="ph">
+     <div>
+      <h3>Estimated Cost Calculator</h3>
+      <p>Apne order ki quantity daal kar anumanit kharch (cost) turant pata karein.</p>
+     </div>
+    </div>
     <div class="est">
      <div>
-      <label for="vol" style="color:#fef3c7">Production Volume</label>
+      <label for="vol" style="color:#fef3c7">Total Quantity / Units</label>
       <input type="range" id="vol" min="100" max="10000" step="100" value="1500">
       <div style="display:flex;justify-content:space-between;font-size:12px;color:#d1d5db;margin:6px 0 18px"><span>100</span><b id="volV" style="color:#fb923c">1,500 Units</b><span>10,000</span></div>
-      <label for="cx" style="color:#fef3c7">Manufacturing Complexity</label>
-      <select id="cx"><option value="1">Standard Assembly (1.0x)</option><option value="1.3">Precision Multi-Stage (1.3x)</option><option value="1.6">Custom Engineered (1.6x)</option></select>
+      <label for="cx" style="color:#fef3c7">Kaam ka Type (Complexity)</label>
+      <select id="cx">
+       <option value="1">Normal Work (Standard)</option>
+       <option value="1.3">Medium Work (Extra Care)</option>
+       <option value="1.6">Heavy / Special Work</option>
+      </select>
      </div>
-     <div class="res"><span class="tag t-b">ESTIMATED COST</span><h2 id="cost">$42,000</h2><p>Includes raw materials, direct labor allocation and factory overheads.</p><button class="btn" style="width:100%" data-open="demo">Get Detailed Quotation</button></div>
+     <div class="res">
+      <span class="tag t-b">ESTIMATED PRICE</span>
+      <h2 id="cost">$42,000</h2>
+      <p>Isme saman aur labour ka sabhi kharch shamil hai.</p>
+      <button class="btn" style="width:100%" data-open="demo" data-module="Simple ERP Inquiry">Talk to Expert</button>
+     </div>
     </div>
    </div>
+
   </div>
  </div>
 </section>
@@ -635,7 +681,7 @@ th.onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
 
 const bg=$('#burger'),lk=$('#links');
 bg.onclick=()=>{const o=lk.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
-$$('#links a').forEach(a=>a.addEventListener('click',()=>{lk.classList.remove('open');bg.setAttribute('aria-expanded',false)})); const secs=$$
+$$('#links a').forEach(a=>a.addEventListener('click',()=>{lk.classList.remove('open');bg.setAttribute('aria-expanded',false)}));  const secs=$$
 ('section[id]'),navA=$$('.links a.l'); const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45\% 0px -50\% 0px'}); secs.forEach(s=>spy.observe(s));  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12}); const rv=()=>$$('.rv:not(.in)').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});rv();
 
 let lastFocus;
@@ -652,6 +698,19 @@ const mail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);$$('input,textarea').forEach(
 
 // Shared Google Sheets Script URL
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxS8i_EQj_ID9ZnWHlo-D2qSVNz_eN2l557fnD-noqM9_LJGm9ye7IcplxMJzBx8xWY/exec';
+
+// Interactive Tabs & Touch Handlers for ERP Modules (Yahan add kiya gaya hai)
+$$('.tab').forEach(t => { t.addEventListener('click', () => { $$
+('.tab').forEach(x => x.classList.remove('active'));
+    $$('.view').forEach(v => v.classList.remove('active'));  t.classList.add('active'); const targetView = document.getElementById(t.dataset.view); if(targetView) { targetView.classList.add('active'); animBars(); } }); });  function animBars(){$$
+('.prog i').forEach(i=>{i.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>i.style.width=i.dataset.w+'%'))})}
+animBars();
+
+function calc(){const v=+$('#vol').value;$('#volV').textContent=v.toLocaleString()+' Units';$('#cost').textContent='$'+Math.round(v*28*$('#cx').value).toLocaleString()}
+$('#vol').oninput=calc;$('#cx').onchange=calc;calc();  $$('.act').forEach(b=>b.addEventListener('click',()=>{const it=b.dataset.item;if(b.dataset.kind==='reorder'){b.disabled=true;b.textContent='Queued ✓';b.style.background='var(--ok)';toast('Auto-reorder initiated for '+it,'success')}else toast('Inspection report opened for '+it,'info')}));
+$('#sync').onclick=function(){const b=this;b.disabled=true;b.textContent='Syncing…';setTimeout(()=>{b.disabled=false;b.innerHTML='<i>🔄</i> Sync Stock';toast('Stock synced successfully','success')},1100)};
+
+let wn=993;$('#addWo').onclick=()=>{const d=document.createElement('div'),p=Math.floor(Math.random()*60)+10;d.className='card';d.style.cssText='background:#241b14;border-color:#573822;color:#fef3c7;padding:20px;animation:fadeUp .4s';d.innerHTML=`<small style="color:#fb923c;font-weight:800;font-size:11px;text-transform:uppercase">New · Line 0${(wn%3)+1}</small><h4 style="color:#fff;margin:6px 0">Batch #B-${wn++}</h4><span style="font-size:12px;color:#d1d5db">${p}% completed</span><div class="prog"><i style="width:${p}%;background:#ea580c"></i></div>`;$('#woList').appendChild(d);toast('Work order created','success')};
 
 // 1. Book Demo / Appointment Form Integration
 const demoForm = document.getElementById('df');
