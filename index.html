@@ -406,6 +406,7 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
    <button class="tab active" data-view="v1" role="tab">📦 Stock / Inventory</button>
    <button class="tab" data-view="v2" role="tab">⏱ Daily Work Plan</button>
    <button class="tab" data-view="v3" role="tab">🧮 Cost Calculator</button>
+   <button class="tab" data-view="v4" role="tab">⚡ Live Preview Demo</button>
   </div>
 
   <div class="panel">
@@ -477,6 +478,63 @@ footer a{transition:color .2s}footer a:hover{color:#fb923c}
      </div>
     </div>
    </div>
+    <!-- Feature 4: Live Preview Demo -->
+     <!-- Panel ke andar yeh naya view (view 4) jodein -->
+<div class="view" id="v4">
+ <div class="ph">
+  <div>
+   <h3>Live Data Binding Demo (No Save)</h3>
+   <p>Yahan form bharkar dekhein, details bina page refresh kiye turant niche table mein dikhengi.</p>
+  </div>
+ </div>
+ <div class="est" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+  <!-- Left Side: Quick Form -->
+  <div style="background:#241b14; padding:20px; border-radius:16px; border:1px solid #573822;">
+   <h4 style="color:#fff; margin-bottom:12px; font-size:16px;">Quick Entry Form</h4>
+   <form id="liveDemoForm" novalidate style="display:grid; gap:10px;">
+    <div>
+     <label style="font-size:12px; color:#fed7aa;">Customer / Student Name</label>
+     <input id="ldName" placeholder="e.g. Rahul Sharma" style="padding:10px; font-size:14px;" required>
+    </div>
+    <div>
+     <label style="font-size:12px; color:#fed7aa;">Phone Number</label>
+     <input id="ldPhone" placeholder="e.g. 9876543210" style="padding:10px; font-size:14px;" required>
+    </div>
+    <div>
+     <label style="font-size:12px; color:#fed7aa;">Service / Purpose (School Admission / Shop Order)</label>
+     <input id="ldPurpose" placeholder="e.g. Class 10 Admission / Grocery Order" style="padding:10px; font-size:14px;" required>
+    </div>
+    <button type="submit" class="btn sm" style="width:100%; margin-top:8px;">Instant Show on Screen ➔</button>
+   </form>
+  </div>
+
+  <!-- Right Side: Live Table Display -->
+  <div style="background:#241b14; padding:20px; border-radius:16px; border:1px solid #573822; overflow-x:auto;">
+   <h4 style="color:#fff; margin-bottom:12px; font-size:16px;">Live Screen Output (Real-time Bind)</h4>
+   <table style="min-width:280px; font-size:13px;">
+    <thead>
+     <tr>
+      <th style="padding:8px;">Name</th>
+      <th style="padding:8px;">Phone</th>
+      <th style="padding:8px;">Purpose</th>
+     </tr>
+    </thead>
+    <tbody id="liveTableBody">
+     <tr>
+      <td style="padding:8px;" class="code">Amit Verma</td>
+      <td style="padding:8px;">9811223344</td>
+      <td style="padding:8px;">School Admission Enquiry</td>
+     </tr>
+     <tr>
+      <td style="padding:8px;" class="code">Priya Singh</td>
+      <td style="padding:8px;">9722334455</td>
+      <td style="padding:8px;">Shop Appoinment Booking</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</div>
 
   </div>
  </div>
@@ -696,6 +754,35 @@ function bad(el,msg){el.classList.add('err');const f=el.parentElement.querySelec
 function clr(f){$$('.err',f).forEach(x=>x.classList.remove('err'));$$('.ferr',f).forEach(x=>x.textContent='')}
 const mail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);$$('input,textarea').forEach(i=>i.addEventListener('input',()=>{i.classList.remove('err');const f=i.parentElement.querySelector('.ferr');if(f)f.textContent=''}));
 
+// Live Demo Form Binding (Client Demo Purpose - No Backend Save)
+const liveForm = document.getElementById('liveDemoForm');
+if(liveForm) {
+  liveForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('ldName').value.trim();
+    const phone = document.getElementById('ldPhone').value.trim();
+    const purpose = document.getElementById('ldPurpose').value.trim();
+
+    if(!name || !phone || !purpose) {
+      return toast('Please fill all fields for live preview', 'warn');
+    }
+
+    const tbody = document.getElementById('liveTableBody');
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+      <td style="padding:8px;" class="code">${esc(name)}</td>
+      <td style="padding:8px;">${esc(phone)}</td>
+      <td style="padding:8px;">${esc(purpose)}</td>
+    `;
+    
+    // Nayi entry ko sabse upar dikhane ke liye
+    tbody.insertBefore(newRow, tbody.firstChild);
+    
+    toast('Data bound to screen successfully!', 'success');
+    liveForm.reset();
+  });
+}
+    
 // Shared Google Sheets Script URL
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxS8i_EQj_ID9ZnWHlo-D2qSVNz_eN2l557fnD-noqM9_LJGm9ye7IcplxMJzBx8xWY/exec';
 
